@@ -1,5 +1,24 @@
-book_filename: "bookdown_new"
+book_filename: "calcul3"
+repo: https://github.com/desautm/calcul3
 delete_merged_file: true
+output_dir: "docs"
+edit: https://github.com/desautm/calcul3/edit/%s
 language:
+  label:
+    fig: 'Figure '
+    tab: 'Table '
+    eq: 'Équation '
+    thm: 'Théorème '
+    lem: 'Lemme '
+    cor: 'Corollaire '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Définition '
+    exm: 'Exemple '
+    exr: 'Exercice '
+    proof: 'Preuve. '
+    remark: 'Remarque. '
+    solution: 'Solution. '
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Chapitre "
+    edit: "Source"
