@@ -1,2 +1,3 @@
 # calcul3
-Un livre de Calcul Différentiel et Intégral dans l'Espace écrit avec l'extension bookdown.
+
+Un livre de calcul différentiel et intégral dans l'espace écrit avec l'extension _bookdown_.

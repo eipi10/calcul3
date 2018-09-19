@@ -1,0 +1,32 @@
+# Les séries de Taylor {#taylor}
+
+## Quelques rappels
+
+Dans le dernier cours de calcul intégral, nous avons introduit les séries de Taylor. Ces dernières sont des séries de puissances qui décrivent certaines fonctions sur un intervalle que l'on appelle intervalle de convergence. Rappelons ces notions.
+
+```{definition name = "Séries de Taylor"}
+Soit $f(x)$ une fonction indéfiniment dérivable en $x=a$. Le développement en série de Taylor de la fonction $f(x)$ autour de $x=a$ est donné par:
+\begin{equation} 
+\begin{split}
+f(x) &= \sum_{k=0}^{\infty }\dfrac{f^{(k)}(a)}{k!}(x-a)^k \\
+&= f(a)+f'(a)(x-a)+\dfrac{f''(a)(x-a)^2}{2!}+\ldots+\dfrac{f^{(k)}(a)}{k!}(x-a)^k+\ldots
+\end{split}
+(\#eq:series-taylor)
+\end{equation}
+et ce, pour toutes les valeurs de $x$ où cette série converge.
+```
+
+Une série de Taylor lorsque $a=0$ est appelée série de Maclaurin.
+```{definition name = "Séries de Maclaurin"}
+Soit $f(x)$ une fonction indéfiniment dérivable en $x=0$. Le développement en série de Maclaurin de la fonction $f(x)$ autour de $x=0$ est donné par:
+\begin{equation} 
+\begin{split}
+f(x) &= \sum_{k=0}^{\infty }\dfrac{f^{(k)}(0)}{k!}x^k \\
+&= f(0)+f'(0)x+\dfrac{f''(0)x^2}{2!}+\ldots+\dfrac{f^{(k)}(0)}{k!}x^k+\ldots
+\end{split}
+(\#eq:series-maclaurin)
+\end{equation}
+et ce, pour toutes les valeurs de $x$ où cette série converge.
+```
+
+
