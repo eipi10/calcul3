@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Calcul différentiel et intégral dans l’espace</title>
   <meta name="description" content="Un livre portant sur le calcul différentiel et intégral dans l’espace.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Calcul différentiel et intégral dans l’espace" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Marc-André Désautels">
 
 
-<meta name="date" content="2018-09-19">
+<meta name="date" content="2018-09-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -75,6 +75,8 @@
 <li class="chapter" data-level="1" data-path="taylor.html"><a href="taylor.html"><i class="fa fa-check"></i><b>1</b> Les séries de Taylor</a><ul>
 <li class="chapter" data-level="1.1" data-path="taylor.html"><a href="taylor.html#les-polynomes-de-taylor-et-de-maclaurin"><i class="fa fa-check"></i><b>1.1</b> Les polynômes de Taylor et de MacLaurin</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="taylor.html"><a href="taylor.html#les-polynomes-de-maclaurin"><i class="fa fa-check"></i><b>1.1.1</b> Les polynômes de MacLaurin</a></li>
+<li class="chapter" data-level="1.1.2" data-path="taylor.html"><a href="taylor.html#les-polynomes-de-taylor"><i class="fa fa-check"></i><b>1.1.2</b> Les polynômes de Taylor</a></li>
+<li class="chapter" data-level="1.1.3" data-path="taylor.html"><a href="taylor.html#le-reste-de-taylor-lagrange"><i class="fa fa-check"></i><b>1.1.3</b> Le reste de Taylor-Lagrange</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="edo.html"><a href="edo.html"><i class="fa fa-check"></i><b>2</b> Les équations différentielles ordinaires</a></li>
@@ -192,7 +194,55 @@ P_n(x)&amp;=\sum_{k=0}^n\dfrac{f^{(k)}(0)}{k!}x^k=f(0)+f^{(1)}(0)x+\dfrac{f^{(2)
 
 </div>
 
-<p>Allo les vieux</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-5" class="example"><strong>Exemple 1.2  </strong></span>Trouvez les polynômes de MacLaurin de degrés 1, 2 et 3 de <span class="math inline">\(f(x)=sin(x)\)</span>.
+
+</div>
+
+</div>
+<div id="les-polynomes-de-taylor" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Les polynômes de Taylor</h3>
+<p>Les polynômes de Maclaurin utilisent l’évaluation des dérivées successives de la fonction <span class="math inline">\(f(x)\)</span> en <span class="math inline">\(x=0\)</span>. Il est par contre possible de généraliser ces polynômes en évaluant les dérivées successives de la fonction <span class="math inline">\(f(x)\)</span> en <span class="math inline">\(x=a\)</span>, avec <span class="math inline">\(a\in \text{dom} f\)</span>. C’est ce que nous appelons les polynômes de Taylor.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-6" class="definition"><strong>Définition 1.3  (Polynôme de Taylor)  </strong></span>Soit <span class="math inline">\(f(x)\)</span> une fonction dérivable au moins <span class="math inline">\(n\)</span> fois en <span class="math inline">\(x=a\)</span>. Le <strong>polynôme de Taylor</strong> de degré <span class="math inline">\(n\)</span>, <span class="math inline">\(P_n(x)\)</span>, est donné par:
+<span class="math display">\[\begin{align*}
+P_n(x)&amp;=\sum_{k=0}^n\dfrac{f^{(k)}(a)}{k!}(x-a)^k\\
+&amp;=f(a)+f^{(1)}(a)(x-a)+\dfrac{f^{(2)}(a)}{2!}(x-a)^2+...+\dfrac{f^{(n)}(a)}{n!}(x-a)^n
+\end{align*}\]</span>
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-7" class="example"><strong>Exemple 1.3  </strong></span>Trouvez le polynôme de Taylor de <span class="math inline">\(f(x)=\ln(x)\)</span> de degré <span class="math inline">\(4\)</span> autour de <span class="math inline">\(x=1\)</span>.
+
+</div>
+
+</div>
+<div id="le-reste-de-taylor-lagrange" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Le reste de Taylor-Lagrange</h3>
+<p>Les polynômes de Taylor sont des approximations d’une fonction, ce qui signifie qu’une erreur est commise. Le théorème suivant nous permet de quantifier l’erreur commise, c’est-à-dire <span class="math inline">\(f(x)-P_n(x)\)</span>.</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-8" class="theorem"><strong>Théorème 1.1  (Le reste de Taylor-Lagrange)  </strong></span>Soit <span class="math inline">\(f(x)\)</span> une fonction dérivable au moins <span class="math inline">\(n+1\)</span> fois sur l’intervalle <span class="math inline">\(I=[a,x]\)</span> (si <span class="math inline">\(x&gt;a\)</span>) ou <span class="math inline">\(I=[x,a]\)</span> (si <span class="math inline">\(x&lt;a\)</span>). L’erreur commise <span class="math inline">\(E_n(x)\)</span> par l’approximation de <span class="math inline">\(f(x)\)</span> par <span class="math inline">\(P_n(x)\)</span> est donnée par:
+<span class="math display">\[\begin{align*}
+|f(x)-P_n(x)|=|E_n(x)|=\left\vert\dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}(x-a)^{(n+1)}\right\vert
+\end{align*}\]</span>
+avec <span class="math inline">\(\xi(x)\in I\)</span>.
+</div>
+
+
+<div class="proof">
+ <span class="proof"><em>Preuve. </em></span> La démonstration est plus avancée que le niveau de ce livre.
+</div>
+
+<p>Comme la valeur <span class="math inline">\(\xi(x)\)</span> est rarement connue, nous utiliserons plutôt une borne sur l’erreur:</p>
+<span class="math display">\[\begin{align*}
+    |E_n(x)|=|f(x)-P_n(x)|&amp;=\left\vert\dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}(x-a)^{n+1}\right\vert\\
+    |f(x)-P_n(x)| &amp;\leq \left\vert\dfrac{M}{(n+1)!}(x-a)^{n+1}\right\vert,
+\end{align*}\]</span>
+<p>où <span class="math inline">\(M=\text{max}_{x\in I}\left\vert f^{(n+1)}(x) \right\vert\)</span>.</p>
 
 </div>
 </div>
@@ -236,7 +286,7 @@ gitbook.start({
 "link": "https://github.com/desautm/calcul3/edit/master/01-series-taylor.Rmd",
 "text": "Modifier"
 },
-"download": ["calcul3.pdf", "calcul3.epub"],
+"download": ["calcul3.pdf", "calcul3.epub", "calcul3.mobi"],
 "toc": {
 "collapse": "section"
 }

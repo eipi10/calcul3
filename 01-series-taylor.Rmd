@@ -98,9 +98,50 @@ P_n(x)&=\sum_{k=0}^n\dfrac{f^{(k)}(0)}{k!}x^k=f(0)+f^{(1)}(0)x+\dfrac{f^{(2)}(0)
 
 ```{example}
 Trouvez les polynômes de MacLaurin de degrés 1, 2 et 3 de $f(x)=e^x$.
-\vspace*{10cm}
+\vspace*{8cm}
 ```
 
+```{example}
+Trouvez les polynômes de MacLaurin de degrés 1, 2 et 3 de $f(x)=sin(x)$.
+\vspace*{8cm}
+```
 
-Allo les vieux
+### Les polynômes de Taylor
 
+Les polynômes de Maclaurin utilisent l'évaluation des dérivées successives de la fonction $f(x)$ en $x=0$. Il est par contre possible de généraliser ces polynômes en évaluant les dérivées successives de la fonction $f(x)$ en $x=a$, avec  $a\in \text{dom} f$. C'est ce que nous appelons les polynômes de Taylor.
+
+```{definition, name = "Polynôme de Taylor"}
+Soit $f(x)$ une fonction dérivable au moins $n$ fois en $x=a$. Le __polynôme de Taylor__ de degré $n$, $P_n(x)$, est donné par:
+\begin{align*}
+P_n(x)&=\sum_{k=0}^n\dfrac{f^{(k)}(a)}{k!}(x-a)^k\\
+&=f(a)+f^{(1)}(a)(x-a)+\dfrac{f^{(2)}(a)}{2!}(x-a)^2+...+\dfrac{f^{(n)}(a)}{n!}(x-a)^n
+\end{align*}
+```
+
+```{example}
+Trouvez le polynôme de Taylor de $f(x)=\ln(x)$ de degré $4$ autour de $x=1$.
+\vspace*{8cm}
+```
+
+### Le reste de Taylor-Lagrange
+
+Les polynômes de Taylor sont des approximations d'une fonction, ce qui signifie qu'une erreur est commise. Le théorème suivant nous permet de quantifier l'erreur commise, c'est-à-dire $f(x)-P_n(x)$.
+
+```{theorem, name = "Le reste de Taylor-Lagrange"}
+Soit $f(x)$ une fonction dérivable au moins $n+1$ fois sur l'intervalle $I=[a,x]$ (si $x>a$) ou $I=[x,a]$ (si $x<a$). L'erreur commise $E_n(x)$ par l'approximation de $f(x)$ par $P_n(x)$ est donnée par:
+\begin{align*}
+|f(x)-P_n(x)|=|E_n(x)|=\left\vert\dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}(x-a)^{(n+1)}\right\vert
+\end{align*}
+avec $\xi(x)\in I$.
+```
+```{proof}
+La démonstration est plus avancée que le niveau de ce livre.
+```
+
+Comme la valeur $\xi(x)$ est rarement connue, nous utiliserons plutôt une borne sur l'erreur:
+
+\begin{align*}
+	|E_n(x)|=|f(x)-P_n(x)|&=\left\vert\dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}(x-a)^{n+1}\right\vert\\
+	|f(x)-P_n(x)| &\leq \left\vert\dfrac{M}{(n+1)!}(x-a)^{n+1}\right\vert,
+\end{align*}
+où $M=\text{max}_{x\in I}\left\vert f^{(n+1)}(x) \right\vert$.

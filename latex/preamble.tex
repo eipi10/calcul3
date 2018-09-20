@@ -1,4 +1,6 @@
 \usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{amsthm}
 
 \hypersetup{colorlinks=true, urlcolor=blue}
 
@@ -6,3 +8,5 @@
 \renewcommand{\contentsname}{Table des Matières}
 \renewcommand{\partname}{Partie}
 \renewcommand\bibname{Bibliographie}
+
+\newenvironment{exemple}{\begin{tcolorbox}\begin{example}}{\end{example}\end{tcolorbox}}
