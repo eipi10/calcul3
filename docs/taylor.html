@@ -73,7 +73,9 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="taylor.html"><a href="taylor.html"><i class="fa fa-check"></i><b>1</b> Les séries de Taylor</a><ul>
-<li class="chapter" data-level="1.1" data-path="taylor.html"><a href="taylor.html#quelques-rappels"><i class="fa fa-check"></i><b>1.1</b> Quelques rappels</a></li>
+<li class="chapter" data-level="1.1" data-path="taylor.html"><a href="taylor.html#les-polynomes-de-taylor-et-de-maclaurin"><i class="fa fa-check"></i><b>1.1</b> Les polynômes de Taylor et de MacLaurin</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="taylor.html"><a href="taylor.html#les-polynomes-de-maclaurin"><i class="fa fa-check"></i><b>1.1.1</b> Les polynômes de MacLaurin</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="edo.html"><a href="edo.html"><i class="fa fa-check"></i><b>2</b> Les équations différentielles ordinaires</a></li>
 <li class="chapter" data-level="3" data-path="coordpolaires.html"><a href="coordpolaires.html"><i class="fa fa-check"></i><b>3</b> Les coordonnées polaires</a></li>
@@ -101,38 +103,98 @@
             <section class="normal" id="section-">
 <div id="taylor" class="section level1">
 <h1><span class="header-section-number">Chapitre 1</span> Les séries de Taylor</h1>
-<div id="quelques-rappels" class="section level2">
-<h2><span class="header-section-number">1.1</span> Quelques rappels</h2>
-<p>Dans le dernier cours de calcul intégral, nous avons introduit les séries de Taylor. Ces dernières sont des séries de puissances qui décrivent certaines fonctions sur un intervalle que l’on appelle intervalle de convergence. Rappelons ces notions.</p>
+<div id="les-polynomes-de-taylor-et-de-maclaurin" class="section level2">
+<h2><span class="header-section-number">1.1</span> Les polynômes de Taylor et de MacLaurin</h2>
+<p>De tous les types de fonctions, les fonctions polynomiales sont celles qui se dérivent et s’intègrent le plus facilement. De plus, si leur degré est inférieur ou égal à 5, des formules permettent de trouver facilement leurs zéros. Pour ces raisons, l’écriture d’une fonction <span class="math inline">\(f(x)\)</span> sous la forme d’un polynôme de degré <span class="math inline">\(n\)</span>, <span class="math inline">\(P_n(x)\)</span>, nous permet de l’étudier aisément. Cependant, en écrivant une fonction sous la forme d’un polynôme, nous obtenons une approximation.</p>
+<p>L’approche de Taylor et de MacLaurin est couramment utilisée pour transformer une fonction en polynôme.</p>
+<div id="les-polynomes-de-maclaurin" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Les polynômes de MacLaurin</h3>
+<p>Pour savoir de quelle manière exprimer une fonction <span class="math inline">\(f(x)\)</span> sous la forme d’un polynôme, nous étudierons un cas particulier des polynômes de Taylor, soit les polynômes de MacLaurin.</p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-1" class="definition"><strong>Définition 1.1  (Séries de Taylor)  </strong></span>Soit <span class="math inline">\(f(x)\)</span> une fonction indéfiniment dérivable en <span class="math inline">\(x=a\)</span>. Le développement en série de Taylor de la fonction <span class="math inline">\(f(x)\)</span> autour de <span class="math inline">\(x=a\)</span> est donné par:
-<span class="math display" id="eq:series-taylor">\[\begin{equation} 
+<span id="def:unnamed-chunk-1" class="definition"><strong>Définition 1.1  (Polynôme de Maclaurin)  </strong></span>Soit <span class="math inline">\(f(x)\)</span> une fonction dérivable au moins <span class="math inline">\(n\)</span> fois. Le <strong>polynôme de MacLaurin</strong> de degré <span class="math inline">\(n\)</span>, <span class="math inline">\(P_n(x)\)</span>, de la fonction <span class="math inline">\(f(x)\)</span> est un polynôme satisfaisant les conditions suivantes:
+<span class="math display">\[\begin{align}
 \begin{split}
-f(x) &amp;= \sum_{k=0}^{\infty }\dfrac{f^{(k)}(a)}{k!}(x-a)^k \\
-&amp;= f(a)+f&#39;(a)(x-a)+\dfrac{f&#39;&#39;(a)(x-a)^2}{2!}+\ldots+\dfrac{f^{(k)}(a)}{k!}(x-a)^k+\ldots
+f(0) &amp;= P_n(0) \\
+\left.\dfrac{d^k f}{dx^k}\right|_{x=0} &amp;= \left.\dfrac{d^k P_n}{dx^k}\right|_{x=0}, \quad \text{pour } k\in\{1,\ldots,n\}
 \end{split}
-\tag{1.1}
-\end{equation}\]</span>
-et ce, pour toutes les valeurs de <span class="math inline">\(x\)</span> où cette série converge.
+\end{align}\]</span>
 </div>
 
-Une série de Taylor lorsque <span class="math inline">\(a=0\)</span> est appelée série de Maclaurin.
+<p>Les deux conditions suivantes permettent de construire le polynôme de MacLaurin pour une fonction <span class="math inline">\(f(x)\)</span> quelconque. Nous savons qu’un polynôme de degré <span class="math inline">\(n\)</span> s’écrit de la façon suivante:</p>
+<span class="math display">\[\begin{align*}
+P_n(x)=a_0+a_1x+a_2x^2+...+a_{n-1}x^{n-1}+a_nx^n
+\end{align*}\]</span>
+<p>Pour trouver les coefficients <span class="math inline">\(a_k\)</span>, nous devons obtenir les dérivées successives de <span class="math inline">\(P_n(x)\)</span>. Ainsi:</p>
+<span class="math display">\[\begin{align}
+\begin{split}
+P_n(x) &amp;= a_0+a_1x+a_2x^2+...+a_{n-1}x^{n-1}+a_nx^n \\
+P_n^{(1)}(x) &amp;= 1a_1+2a_2x+3a_3x^2+...+(n-1)a_{n-1}x^{n-2}+na_nx^{n-1} \\
+P_n^{(2)}(x) &amp;= 2\cdot 1a_2+3\cdot 2a_3x+...+(n-1)(n-2)a_{n-1}x^{n-3}+n(n-1)a_nx^{n-2} \\
+P_n^{(3)}(x) &amp;= 3\cdot 2\cdot 1a_3+...+(n-1)(n-2)(n-3)a_{n-1}x^{n-4}+n(n-1)(n-2)a_nx^{n-3}
+\end{split}
+\end{align}\]</span>
+<p>et ainsi de suite.</p>
+<p>Par définition, nous savons que <span class="math inline">\(f(0)=P_n(0)\)</span>. Ainsi:</p>
+<span class="math display">\[\begin{align}
+\begin{split}
+f(0)&amp;=P_n(0) \\
+f(0) &amp;= a_0+a_1(0)+a_2(0)^2+...+a_{n-1}(0)^{n-1}+a_n(0)^n \\
+f(0)&amp;=a_0
+\end{split}
+\end{align}\]</span>
+<p>De même, nous savons que <span class="math inline">\(f^{(1)}(0)=P_n^{(1)}(0)\)</span>. Ainsi:</p>
+<span class="math display">\[\begin{align}
+\begin{split}
+f^{(1)}(0)&amp;=P_n^{(1)}(0)\\
+f^{(1)}(0)&amp;=1a_1+2a_2(0)+3a_3(0)^2+...+(n-1)a_{n-1}(0)^{n-2}+na_n(0)^{n-1} \\
+f^{(1)}(0)&amp;=1a_1  \\
+\dfrac{f^{(1)}(0)}{1}&amp;=a_1
+\end{split}
+\end{align}\]</span>
+<p>De la même façon, nous savons que <span class="math inline">\(f^{(2)}(0)=P_n^{(2)}(0)\)</span>. Ainsi:</p>
+<span class="math display">\[\begin{align}
+\begin{split}
+f^{(2)}(0)&amp;=P^{(2)}_n(0)\\
+f^{(2)}(0)&amp;=2\cdot 1a_2+3\cdot 2a_3(0)+\ldots+(n-1)(n-2)a_{n-1}(0)^{n-3}+n(n-1)a_n(0)^{n-2} \\
+f^{(2)}(0)&amp;=2\cdot 1a_2  \\
+\dfrac{f^{(2)}(0)}{2\cdot 1}&amp;=a_2
+\end{split}
+\end{align}\]</span>
+<p>D’une manière générale, nous trouvons:</p>
+<span class="math display">\[\begin{align}
+\begin{split}
+a_k &amp;= \dfrac{1}{k\cdot (k-1)\cdot ...\cdot 3\cdot 2\cdot 1}f^{(k)}(0) \\
+&amp;= \dfrac{f^{(k)}(0)}{k!}
+\end{split}
+\end{align}\]</span>
+
+<div class="remark">
+ <span class="remark"><em>Remarque</em> (Factorielle). </span> La factorielle d’un nombre entier <span class="math inline">\(k\)</span> positif, notée <span class="math inline">\(k!\)</span>, est égale à:
+<span class="math display">\[\begin{equation*}
+k! = k(k-1)(k-2)\cdot\ldots\cdot 3\cdot 2\cdot 1
+\end{equation*}\]</span>
+Et par définition <span class="math inline">\(0!=1\)</span>.
+</div>
+
+<p>Nous obtenons donc une équation pour déterminer le polynôme de MacLaurin d’une fonction.</p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-2" class="definition"><strong>Définition 1.2  (Séries de Maclaurin)  </strong></span>Soit <span class="math inline">\(f(x)\)</span> une fonction indéfiniment dérivable en <span class="math inline">\(x=0\)</span>. Le développement en série de Maclaurin de la fonction <span class="math inline">\(f(x)\)</span> autour de <span class="math inline">\(x=0\)</span> est donné par:
-<span class="math display" id="eq:series-maclaurin">\[\begin{equation} 
-\begin{split}
-f(x) &amp;= \sum_{k=0}^{\infty }\dfrac{f^{(k)}(0)}{k!}x^k \\
-&amp;= f(0)+f&#39;(0)x+\dfrac{f&#39;&#39;(0)x^2}{2!}+\ldots+\dfrac{f^{(k)}(0)}{k!}x^k+\ldots
-\end{split}
-\tag{1.2}
-\end{equation}\]</span>
-et ce, pour toutes les valeurs de <span class="math inline">\(x\)</span> où cette série converge.
+<span id="def:unnamed-chunk-3" class="definition"><strong>Définition 1.2  (Polynôme de MacLaurin)  </strong></span>Soit <span class="math inline">\(f(x)\)</span> une fonction dérivable au moins <span class="math inline">\(n\)</span> fois en <span class="math inline">\(x=0\)</span>. Le <strong>polynôme de MacLaurin</strong> de degré <span class="math inline">\(n\)</span>, <span class="math inline">\(P_n(x)\)</span>, est donné par:
+<span class="math display">\[\begin{align*}
+P_n(x)&amp;=\sum_{k=0}^n\dfrac{f^{(k)}(0)}{k!}x^k=f(0)+f^{(1)}(0)x+\dfrac{f^{(2)}(0)}{2!}x^2+...+\dfrac{f^{(n)}(0)}{n!}x^n
+\end{align*}\]</span>
 </div>
 
-<p>L’équation <a href="taylor.html#eq:series-taylor">(1.1)</a> représente…</p>
 
+<div class="example">
+<span id="exm:unnamed-chunk-4" class="example"><strong>Exemple 1.1  </strong></span>Trouvez les polynômes de MacLaurin de degrés 1, 2 et 3 de <span class="math inline">\(f(x)=e^x\)</span>.
+
+</div>
+
+<p>Allo les vieux</p>
+
+</div>
 </div>
 </div>
             </section>
