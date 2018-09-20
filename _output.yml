@@ -30,8 +30,5 @@ bookdown::pdf_book:
   highlight: tango
   number_sections: true
 
-bookdown::html_chapters:
-  css: [css/style.css, css/toc.css]
-
 bookdown::epub_book: default
 
