@@ -9,7 +9,7 @@ bibliography: ["book.bib", "packages.bib"]
 biblio-style: "apalike"
 link-citations: yes
 github-repo: desautm/calcul3
-description: "Un livre portant sur le calcul différentiel et intégral dans l'espace."
+description: "Un livre sous forme de notes trouées portant sur le calcul différentiel et intégral dans l'espace."
 ---
 
 ```{r setup, include = FALSE}

@@ -1,1 +1,62 @@
 # Les équations différentielles ordinaires {#edo}
+
+Les équations différentielles sont à la base de la modélisation de divers phénomènes physiques, statistiques, chimiques, biologiques ou économiques, par exemple. Nous n'étudierons pas en détail comment obtenir ces équations différentielles mais nous verrons comment résoudre trois types d'équations différentielles différents.
+
+Nous étudierons les types suivants:
+
+ - Les équations différentielles à variables séparables
+ - Les équations différentielles linéaires
+ - Les équations différentielles à coefficients constants d'ordre 2
+
+```{definition, name = "Équation différentielle ordinaire"}
+Une __équation différentielle ordinaire__ est une équation de la forme:
+\begin{align*}
+F(t, y, y^{(1)}, y^{(2)},\ldots, y^{(n)})=0
+\end{align*}
+où $y$ est une fonction inconnue de $t$ et les $y^{(k)}$ sont les dérivées k-ièmes de $y$.
+```
+
+```{example}
+Voici quelques exemples d'équations différentielles:
+
+ - $\dfrac{dy}{dt}=2ty$
+ - $(y^{(5)})^3+8ty^{(1)}+12y=1$
+ - $y''+by'+ky=\sin(\omega x)$
+
+```
+
+```{definition, name = "L'ordre d'une équation différentielle"}
+L'__ordre__ d'une équation différentielle est l'entier représentant l'ordre de la dérivée la plus élevée de la fonction inconnue apparaissant dans l'équation différentielle.
+```
+
+```{example}
+Voici quelques exemples d'ordre de diverses équations différentielles:
+
+ - $\dfrac{dy}{dt}=2ty$, ordre de 1
+ - $(y^{(5)})^3+8ty^{(1)}+12y=1$, ordre de 5
+ - $y''+by'+ky=\sin(\omega x)$, ordre de 2
+
+```
+
+## Les équations différentielles à variables séparables
+
+```{definition, name = "Équation différentielle à variables séparables"}
+Une __équation différentielle à variables séparables__ est une équation différentielle qui peut s'écrire sous la forme $M(y)dy=N(x)dx$.
+```
+
+Pour trouver la solution d'une équation différentielle à variables séparables, il faut:
+
+ - Mettre l'équation sous la forme différentielle, c'est-à-dire placer les différentielles au __numérateur__.
+ - Séparer les variables pour en se basant sur les différentielles.
+ - Intégrer de chaque côté de l'égalité, c'est-à-dire $\int M(y)dy=\int N(x)dx$
+
+```{exercise}
+Résolvez l'équation différentielle suivante: $\cos(y)\dfrac{dy}{dt}=t^2$.
+```
+\vspace*{8cm}
+
+
+
+## Les équations différentielles linéaires
+
+## Les équations différentielles à coefficients constants d'ordre 2

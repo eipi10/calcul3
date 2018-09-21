@@ -6,26 +6,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Calcul différentiel et intégral dans l’espace</title>
-  <meta name="description" content="Un livre portant sur le calcul différentiel et intégral dans l’espace.">
+  <meta name="description" content="Un livre sous forme de notes trouées portant sur le calcul différentiel et intégral dans l’espace.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Calcul différentiel et intégral dans l’espace" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Un livre portant sur le calcul différentiel et intégral dans l’espace." />
+  <meta property="og:description" content="Un livre sous forme de notes trouées portant sur le calcul différentiel et intégral dans l’espace." />
   <meta name="github-repo" content="desautm/calcul3" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Calcul différentiel et intégral dans l’espace" />
   
-  <meta name="twitter:description" content="Un livre portant sur le calcul différentiel et intégral dans l’espace." />
+  <meta name="twitter:description" content="Un livre sous forme de notes trouées portant sur le calcul différentiel et intégral dans l’espace." />
   
 
 <meta name="author" content="Marc-André Désautels">
 
 
-<meta name="date" content="2018-09-20">
+<meta name="date" content="2018-09-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -78,9 +78,18 @@
 <li class="chapter" data-level="1.1.2" data-path="taylor.html"><a href="taylor.html#les-polynomes-de-taylor"><i class="fa fa-check"></i><b>1.1.2</b> Les polynômes de Taylor</a></li>
 <li class="chapter" data-level="1.1.3" data-path="taylor.html"><a href="taylor.html#le-reste-de-taylor-lagrange"><i class="fa fa-check"></i><b>1.1.3</b> Le reste de Taylor-Lagrange</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="taylor.html"><a href="taylor.html#geogebra"><i class="fa fa-check"></i><b>1.2</b> GeoGebra</a></li>
+<li class="chapter" data-level="1.2" data-path="taylor.html"><a href="taylor.html#les-series-de-taylor"><i class="fa fa-check"></i><b>1.2</b> Les séries de Taylor</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="taylor.html"><a href="taylor.html#lobtention-de-series-de-taylor-a-partir-de-series-connues."><i class="fa fa-check"></i><b>1.2.1</b> L’obtention de séries de Taylor à partir de séries connues.</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="edo.html"><a href="edo.html"><i class="fa fa-check"></i><b>2</b> Les équations différentielles ordinaires</a></li>
+<li class="chapter" data-level="1.3" data-path="taylor.html"><a href="taylor.html#applications"><i class="fa fa-check"></i><b>1.3</b> Applications</a></li>
+<li class="chapter" data-level="1.4" data-path="taylor.html"><a href="taylor.html#geogebra-taylor"><i class="fa fa-check"></i><b>1.4</b> GeoGebra</a></li>
+<li class="chapter" data-level="1.5" data-path="taylor.html"><a href="taylor.html#pages-supplementaires"><i class="fa fa-check"></i><b>1.5</b> Pages supplémentaires</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="edo.html"><a href="edo.html"><i class="fa fa-check"></i><b>2</b> Les équations différentielles ordinaires</a><ul>
+<li class="chapter" data-level="2.1" data-path="edo.html"><a href="edo.html#les-equations-differentielles-a-variables-separables"><i class="fa fa-check"></i><b>2.1</b> Les équations différentielles à variables séparables</a></li>
+<li class="chapter" data-level="2.2" data-path="edo.html"><a href="edo.html#les-equations-differentielles-lineaires"><i class="fa fa-check"></i><b>2.2</b> Les équations différentielles linéaires</a></li>
+<li class="chapter" data-level="2.3" data-path="edo.html"><a href="edo.html#les-equations-differentielles-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3</b> Les équations différentielles à coefficients constants d’ordre 2</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="coordpolaires.html"><a href="coordpolaires.html"><i class="fa fa-check"></i><b>3</b> Les coordonnées polaires</a></li>
 <li class="chapter" data-level="4" data-path="fctvar.html"><a href="fctvar.html"><i class="fa fa-check"></i><b>4</b> Les fonctions de plusieurs variables</a></li>
 <li class="chapter" data-level="5" data-path="intfct.html"><a href="intfct.html"><i class="fa fa-check"></i><b>5</b> L’intégration de fonctions de plusieurs variables</a></li>
@@ -106,7 +115,71 @@
             <section class="normal" id="section-">
 <div id="edo" class="section level1">
 <h1><span class="header-section-number">Chapitre 2</span> Les équations différentielles ordinaires</h1>
+<p>Les équations différentielles sont à la base de la modélisation de divers phénomènes physiques, statistiques, chimiques, biologiques ou économiques, par exemple. Nous n’étudierons pas en détail comment obtenir ces équations différentielles mais nous verrons comment résoudre trois types d’équations différentielles différents.</p>
+<p>Nous étudierons les types suivants:</p>
+<ul>
+<li>Les équations différentielles à variables séparables</li>
+<li>Les équations différentielles linéaires</li>
+<li>Les équations différentielles à coefficients constants d’ordre 2</li>
+</ul>
 
+<div class="definition">
+<span id="def:unnamed-chunk-41" class="definition"><strong>Définition 2.1  (Équation différentielle ordinaire)  </strong></span>Une <strong>équation différentielle ordinaire</strong> est une équation de la forme:
+<span class="math display">\[\begin{align*}
+F(t, y, y^{(1)}, y^{(2)},\ldots, y^{(n)})=0
+\end{align*}\]</span>
+où <span class="math inline">\(y\)</span> est une fonction inconnue de <span class="math inline">\(t\)</span> et les <span class="math inline">\(y^{(k)}\)</span> sont les dérivées k-ièmes de <span class="math inline">\(y\)</span>.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-42" class="example"><strong>Exemple 2.1  </strong></span>Voici quelques exemples d’équations différentielles:</p>
+<ul>
+<li><span class="math inline">\(\dfrac{dy}{dt}=2ty\)</span></li>
+<li><span class="math inline">\((y^{(5)})^3+8ty^{(1)}+12y=1\)</span></li>
+<li><span class="math inline">\(y&#39;&#39;+by&#39;+ky=\sin(\omega x)\)</span></li>
+</ul>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-43" class="definition"><strong>Définition 2.2  (L’ordre d’une équation différentielle)  </strong></span>L’<strong>ordre</strong> d’une équation différentielle est l’entier représentant l’ordre de la dérivée la plus élevée de la fonction inconnue apparaissant dans l’équation différentielle.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-44" class="example"><strong>Exemple 2.2  </strong></span>Voici quelques exemples d’ordre de diverses équations différentielles:</p>
+<ul>
+<li><span class="math inline">\(\dfrac{dy}{dt}=2ty\)</span>, ordre de 1</li>
+<li><span class="math inline">\((y^{(5)})^3+8ty^{(1)}+12y=1\)</span>, ordre de 5</li>
+<li><span class="math inline">\(y&#39;&#39;+by&#39;+ky=\sin(\omega x)\)</span>, ordre de 2</li>
+</ul>
+</div>
+
+<div id="les-equations-differentielles-a-variables-separables" class="section level2">
+<h2><span class="header-section-number">2.1</span> Les équations différentielles à variables séparables</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-45" class="definition"><strong>Définition 2.3  (Équation différentielle à variables séparables)  </strong></span>Une <strong>équation différentielle à variables séparables</strong> est une équation différentielle qui peut s’écrire sous la forme <span class="math inline">\(M(y)dy=N(x)dx\)</span>.
+</div>
+
+<p>Pour trouver la solution d’une équation différentielle à variables séparables, il faut:
+- Mettre l’équation sous la forme différentielle, c’est-à-dire placer les différentielles au <strong>numérateur</strong>.
+- Séparer les variables pour en se basant sur les différentielles.
+- Intégrer de chaque côté de l’égalité, c’est-à-dire <span class="math inline">\(\int M(y)dy=\int N(x)dx\)</span></p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercice 2.1  </strong></span>Résolvez l’équation différentielle suivante: <span class="math inline">\(\cos(y)\dfrac{dy}{dt}=t^2\)</span>.
+</div>
+
+</div>
+<div id="les-equations-differentielles-lineaires" class="section level2">
+<h2><span class="header-section-number">2.2</span> Les équations différentielles linéaires</h2>
+</div>
+<div id="les-equations-differentielles-a-coefficients-constants-dordre-2" class="section level2">
+<h2><span class="header-section-number">2.3</span> Les équations différentielles à coefficients constants d’ordre 2</h2>
+
+</div>
 </div>
             </section>
 
