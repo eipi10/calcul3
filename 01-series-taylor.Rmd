@@ -145,3 +145,33 @@ Comme la valeur $\xi(x)$ est rarement connue, nous utiliserons plutôt une borne
 	|f(x)-P_n(x)| &\leq \left\vert\dfrac{M}{(n+1)!}(x-a)^{n+1}\right\vert,
 \end{align*}
 où $M=\text{max}_{x\in I}\left\vert f^{(n+1)}(x) \right\vert$.
+
+## GeoGebra
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+<script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+<script type="text/javascript">
+var parameters = {
+"id":"ggbApplet",
+"material_id":"jg2qjmar",
+"width":800,
+"height":600,
+"showToolBar":true,
+"borderColor":null,
+"showMenuBar":true,
+"allowStyleBar":true,
+"showAlgebraInput":true,
+"enableLabelDrags":false,
+"enableShiftDragZoom":true,
+"capturingThreshold":null,
+"showToolBarHelp":false,
+"errorDialogsActive":true,
+"showTutorialLink":true,
+"showLogging":true,
+"useBrowserForJS":false,
+"perspective":"AG"};
+
+var applet = new GGBApplet(parameters, '5.0', 'applet_container');
+window.onload = function() { applet.inject('applet_container'); updateHelp('AG');}
+</script>
+<div id="applet_container"></div>
