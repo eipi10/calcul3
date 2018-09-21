@@ -156,20 +156,115 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 </ul>
 </div>
 
+
+<div class="definition">
+<span id="def:unnamed-chunk-45" class="definition"><strong>Définition 2.3  (Solution d’une équation différentielle)  </strong></span>Une fonction (ou une équation) est une <strong>solution d’une équation différentielle</strong> si, en la remplaçant ainsi que ses dérivées dans l’équation différentielle, l’égalité est vérifiée.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercice 2.1  </strong></span>Vérifiez que <span class="math inline">\(y(x)=e^{2x}\)</span> est une solution de l’équation différentielle <span class="math inline">\(\dfrac{d^2y}{dx^2}-3\dfrac{dy}{dx}+2y=0\)</span>.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-47" class="definition"><strong>Définition 2.4  (Solution générale ou famille de solutions d’une équation différentielle)  </strong></span>La <strong>solution générale</strong> ou <strong>famille de solutions</strong> d’une équation différentielle est l’ensemble de toutes les fonctions qui sont des solutions de l’équation différentielle.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercice 2.2  </strong></span>Montrez que <span class="math inline">\(y(t)=t^2+C\)</span> où <span class="math inline">\(C\in\mathbb{R}\)</span> est la solution générale de l’équation différentielle <span class="math inline">\(\dfrac{dx}{dt}=2t\)</span>.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-49" class="definition"><strong>Définition 2.5  (Condition initiale et solution particulière d’une équation différentielle)  </strong></span>Une <strong>condition initiale</strong> d’une équation différentielle est un point (x_0,y_0) par lequel passe la solution, où <span class="math inline">\(x_0\)</span> et <span class="math inline">\(y_0\in\mathbb{R}\)</span>. Une solution de l’équation différentielle qui vérifie la condition initiale est appelée <strong>solution particulière</strong> de l’équation différentielle.
+</div>
+
+
+<div class="remark">
+ <span class="remark"><em>Remarque. </em></span> Lorsque qu’une équation différentielle est d’ordre <span class="math inline">\(n\)</span>, nous aurons besoin de <span class="math inline">\(n\)</span> conditions initiales pour trouver la solution particulière.
+</div>
+
 <div id="les-equations-differentielles-a-variables-separables" class="section level2">
 <h2><span class="header-section-number">2.1</span> Les équations différentielles à variables séparables</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-45" class="definition"><strong>Définition 2.3  (Équation différentielle à variables séparables)  </strong></span>Une <strong>équation différentielle à variables séparables</strong> est une équation différentielle qui peut s’écrire sous la forme <span class="math inline">\(M(y)dy=N(x)dx\)</span>.
+<span id="def:unnamed-chunk-51" class="definition"><strong>Définition 2.6  (Équation différentielle à variables séparables)  </strong></span>Une <strong>équation différentielle à variables séparables</strong> est une équation différentielle qui peut s’écrire sous la forme <span class="math inline">\(M(y)dy=N(x)dx\)</span>.
 </div>
 
-<p>Pour trouver la solution d’une équation différentielle à variables séparables, il faut:
-- Mettre l’équation sous la forme différentielle, c’est-à-dire placer les différentielles au <strong>numérateur</strong>.
-- Séparer les variables pour en se basant sur les différentielles.
-- Intégrer de chaque côté de l’égalité, c’est-à-dire <span class="math inline">\(\int M(y)dy=\int N(x)dx\)</span></p>
+<p>Pour trouver la solution d’une équation différentielle à variables séparables, il faut:</p>
+<ul>
+<li>Mettre l’équation sous la forme différentielle, c’est-à-dire placer les différentielles au <strong>numérateur</strong>.</li>
+<li>Séparer les variables pour en se basant sur les différentielles.</li>
+<li>Intégrer de chaque côté de l’égalité, c’est-à-dire <span class="math inline">\(\int M(y)dy=\int N(x)dx\)</span></li>
+</ul>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercice 2.1  </strong></span>Résolvez l’équation différentielle suivante: <span class="math inline">\(\cos(y)\dfrac{dy}{dt}=t^2\)</span>.
+<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercice 2.3  </strong></span>Résolvez l’équation différentielle suivante: <span class="math inline">\(\cos(y)\dfrac{dy}{dt}=t^2\)</span>.
+</div>
+
+
+<div class="remark">
+ <span class="remark"><em>Remarque. </em></span> Lorsque vous trouvez la solution d’une équation différentielle, il n’est pas toujours possible d’obtenir une équation explicite (c’est-à-dire une équation où la variable dépendante est isolée).
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercice 2.4  </strong></span>Trouvez la solution de l’équation différentielle <span class="math inline">\(x+yy&#39;=0\)</span> passant par le point <span class="math inline">\((3,0)\)</span>.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercice 2.5  (Modèle de Hill-Keller)  </strong></span>Le modèle de Hill-Keller permet de modéliser la course d’un coureur pour de courtes distances, par exemple le 100 m ou le 200 m. Si <span class="math inline">\(F\)</span> est une constante qui correspond à la force du coureur et <span class="math inline">\(\tau\)</span> est une constante représentant les forces de frottement du coureur, l’équation du modèle est donnée par: <span class="math inline">\(\dfrac{dv}{dt}=F-\dfrac{v}{\tau}\)</span>. Trouvez la vitesse d’un coureur en fonction du temps si au temps initial la vitesse du coureur est nulle.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercice 2.6  (La tractrice)  </strong></span>Vous avez une laisse rigide de longueur <span class="math inline">\(a\)</span>. Vous vous trouvez au point <span class="math inline">\((0,0)\)</span> et votre chien se trouve au point <span class="math inline">\((a,0)\)</span>. Vous vous dirigez dans la direction de l’axe des <span class="math inline">\(y\)</span> positifs. L’équation différentielle qui permet de trouver le parcours de votre chien est <span class="math inline">\(\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}\)</span>. Trouvez la solution de l’équation différentielle précédente.
+</div>
+
+<p><img src="resources/images/tractrice.png" width="472" style="display: block; margin: auto;" />
+```
+</p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-58" class="exercise"><strong>Exercice 2.7  </strong></span>Trouvez les trajectoires orthogonales de la famille <span class="math inline">\(x=ky^2\)</span>.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-59" class="exercise"><strong>Exercice 2.8  </strong></span>Trouvez les trajectoires orthogonales de la famille <span class="math inline">\(y=ke^x\)</span>.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-60" class="exercise"><strong>Exercice 2.9  </strong></span>Soit un parachutiste qui tombe sous l’effet de la gravité avec une résistance de l’air proportionnelle à sa vitesse. L’équation différentielle de cette situation est : <span class="math inline">\(\dfrac{dv}{dt}+\dfrac{kv}{m}=g\)</span> où <span class="math inline">\(m\)</span>, <span class="math inline">\(g\)</span> et <span class="math inline">\(k\)</span> sont des constantes positives. Trouvez la solution de l’équation différentielle précédente.
+</div>
+
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercice 2.10  </strong></span>La loi de refroidissement de Newton dit que le taux de variation de la température <span class="math inline">\(T\)</span> d’un objet est
+proportionnel à la différence entre la température de cet objet et la température ambiante (notée <span class="math inline">\(T_A\)</span>).
+Trouvez l’équation différentielle décrivant le phénomène et trouvez <span class="math inline">\(T\)</span> en fonction du temps.
+</div>
+
+<p>Dans des problèmes de mélange, nous cherchons <span class="math inline">\(Q(t)\)</span> qui représente la quantité d’une substance en fonction du temps. L’équation différentielle de base de ce genre de problèmes est:</p>
+<blockquote>
+<p>Taux de variation de <span class="math inline">\(Q(t)\)</span> = Taux d’entrée de <span class="math inline">\(Q(t)\)</span> - Taux de sortie de <span class="math inline">\(Q(t)\)</span></p>
+</blockquote>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercice 2.11  </strong></span>Une cuve contient 10 L d’eau salée dans laquelle 2 kg de sel sont dissout. De l’eau salée contenant 1 kg de sel par litre entre dans la cuve à un débit constant de 3 L/min, et l’eau mélangée est vidée à un taux de 4 L/min. Trouvez la quantité de sel en fonction du temps <span class="math inline">\(Q(t)\)</span>.
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercice 2.12  </strong></span>Une cuve contient 40 L d’eau pure. De la saumure avec 3 kg de sel par litre entre dans la cuve à un débit constant de 2 L/min, et la mixture mélangée s’écoule à un débit constant de 3 L/min.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Trouvez la quantité de sel en fonction du temps <span class="math inline">\(Q(t)\)</span>.</li>
+<li>Quelle est la quantité de sel lorsqu’il reste 20 L dans la cuve?</li>
+</ol>
 </div>
 
 </div>

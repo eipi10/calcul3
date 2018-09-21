@@ -38,6 +38,32 @@ Voici quelques exemples d'ordre de diverses équations différentielles:
 
 ```
 
+```{definition, name = "Solution d'une équation différentielle"}
+Une fonction (ou une équation) est une __solution d'une équation différentielle__ si, en la remplaçant ainsi que ses dérivées dans l'équation différentielle, l'égalité est vérifiée.
+```
+
+```{exercise}
+Vérifiez que $y(x)=e^{2x}$ est une solution de l'équation différentielle $\dfrac{d^2y}{dx^2}-3\dfrac{dy}{dx}+2y=0$.
+```
+\vspace*{5cm}
+
+```{definition, name = "Solution générale ou famille de solutions d'une équation différentielle"}
+La __solution générale__ ou __famille de solutions__ d'une équation différentielle est l'ensemble de toutes les fonctions qui sont des solutions de l'équation différentielle.
+```
+
+```{exercise}
+Montrez que $y(t)=t^2+C$ où $C\in\mathbb{R}$ est la solution générale de l'équation différentielle $\dfrac{dx}{dt}=2t$.
+```
+\vspace*{5cm}
+
+```{definition, name = "Condition initiale et solution particulière d'une équation différentielle"}
+Une __condition initiale__ d'une équation différentielle est un point (x_0,y_0) par lequel passe la solution, où $x_0$ et $y_0\in\mathbb{R}$. Une solution de l'équation différentielle qui vérifie la condition initiale est appelée __solution particulière__ de l'équation différentielle.
+```
+
+```{remark}
+Lorsque qu'une équation différentielle est d'ordre $n$, nous aurons besoin de $n$ conditions initiales pour trouver la solution particulière.
+```
+
 ## Les équations différentielles à variables séparables
 
 ```{definition, name = "Équation différentielle à variables séparables"}
@@ -50,12 +76,75 @@ Pour trouver la solution d'une équation différentielle à variables séparable
  - Séparer les variables pour en se basant sur les différentielles.
  - Intégrer de chaque côté de l'égalité, c'est-à-dire $\int M(y)dy=\int N(x)dx$
 
+
 ```{exercise}
 Résolvez l'équation différentielle suivante: $\cos(y)\dfrac{dy}{dt}=t^2$.
 ```
 \vspace*{8cm}
 
 
+```{remark}
+Lorsque vous trouvez la solution d'une équation différentielle, il n'est pas toujours possible d'obtenir une équation explicite (c'est-à-dire une équation où la variable dépendante est isolée). 
+```
+
+```{exercise}
+Trouvez la solution de l'équation différentielle $x+yy'=0$ passant par le point $(3,0)$.
+```
+\vspace*{8cm}
+
+```{exercise, name = "Modèle de Hill-Keller"}
+Le modèle de Hill-Keller permet de modéliser la course d'un coureur pour de courtes distances, par exemple le 100 m ou le 200 m. Si $F$ est une constante qui correspond à la force du coureur et $\tau$ est une constante représentant les forces de frottement du coureur, l'équation du modèle est donnée par: $\dfrac{dv}{dt}=F-\dfrac{v}{\tau}$. Trouvez la vitesse d'un coureur en fonction du temps si au temps initial la vitesse du coureur est nulle.
+```
+\vspace*{10cm}
+
+```{exercise, name = "La tractrice"}
+Vous avez une laisse rigide de longueur $a$. Vous vous trouvez au point $(0,0)$ et votre chien se trouve au point $(a,0)$. Vous vous dirigez dans la direction de l'axe des $y$ positifs. L'équation différentielle qui permet de trouver le parcours de votre chien est $\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}$. Trouvez la solution de l'équation différentielle précédente.
+```{r,echo=FALSE,fig.align="center"}
+knitr::include_graphics("resources/images/tractrice.png")
+```
+```
+\vspace*{10cm}
+
+```{exercise}
+Trouvez les trajectoires orthogonales de la famille $x=ky^2$.
+```
+\vspace*{8cm}
+
+```{exercise}
+Trouvez les trajectoires orthogonales de la famille $y=ke^x$.
+```
+\vspace*{8cm}
+
+```{exercise}
+Soit un parachutiste qui tombe sous l'effet de la gravité avec une résistance de l'air proportionnelle à sa vitesse. L'équation différentielle de cette situation est : $\dfrac{dv}{dt}+\dfrac{kv}{m}=g$ où $m$, $g$ et $k$  sont des constantes positives. Trouvez la solution de l'équation différentielle précédente.
+```
+\vspace*{8cm}
+
+```{exercise}
+La loi de refroidissement de Newton dit que le taux de variation de la température $T$ d'un objet est 
+proportionnel à la différence entre la température de cet objet et la température ambiante (notée $T_A$).
+Trouvez l'équation différentielle décrivant le phénomène et trouvez $T$ en fonction du temps.
+```
+\vspace*{8cm}
+
+Dans des problèmes de mélange, nous cherchons $Q(t)$ qui représente la quantité d'une substance en fonction du temps. L'équation différentielle de base de ce genre de problèmes est:
+
+> Taux de variation de $Q(t)$ = Taux d'entrée de $Q(t)$ - Taux de sortie de $Q(t)$
+
+```{exercise}
+Une cuve contient 10 L d'eau salée dans laquelle 2 kg de sel sont dissout. De l'eau salée contenant 1 kg de sel par litre entre dans la cuve à un débit constant de 3 L/min, et l'eau mélangée est vidée à un taux de 4 L/min. Trouvez la quantité de sel en fonction du temps $Q(t)$.
+```
+\vspace*{10cm}
+
+```{exercise}
+Une cuve contient 40 L d'eau pure. De la saumure avec 3 kg de sel par litre entre dans la cuve à un débit constant de 2 L/min, et la mixture mélangée s'écoule à un débit constant de 3 L/min.
+
+ a) Trouvez la quantité de sel en fonction du temps $Q(t)$.
+ b) Quelle est la quantité de sel lorsqu'il reste 20 L dans la cuve?
+ 
+ 
+```
+\vspace*{10cm}
 
 ## Les équations différentielles linéaires
 
