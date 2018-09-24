@@ -57,7 +57,7 @@ Montrez que $y(t)=t^2+C$ où $C\in\mathbb{R}$ est la solution générale de l'é
 \vspace*{5cm}
 
 ```{definition, name = "Condition initiale et solution particulière d'une équation différentielle"}
-Une __condition initiale__ d'une équation différentielle est un point (x_0,y_0) par lequel passe la solution, où $x_0$ et $y_0\in\mathbb{R}$. Une solution de l'équation différentielle qui vérifie la condition initiale est appelée __solution particulière__ de l'équation différentielle.
+Une __condition initiale__ d'une équation différentielle est un point $(x_0,y_0)$ par lequel passe la solution, où $x_0$ et $y_0\in\mathbb{R}$. Une solution de l'équation différentielle qui vérifie la condition initiale est appelée __solution particulière__ de l'équation différentielle.
 ```
 
 ```{remark}
@@ -99,9 +99,9 @@ Le modèle de Hill-Keller permet de modéliser la course d'un coureur pour de co
 
 ```{example, name = "La tractrice"}
 Vous avez une laisse rigide de longueur $a$. Vous vous trouvez au point $(0,0)$ et votre chien se trouve au point $(a,0)$. Vous vous dirigez dans la direction de l'axe des $y$ positifs. L'équation différentielle qui permet de trouver le parcours de votre chien est $\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}$. Trouvez la solution de l'équation différentielle précédente.
+```
 ```{r,echo=FALSE,fig.align="center"}
 knitr::include_graphics("resources/images/tractrice.png")
-```
 ```
 \vspace*{10cm}
 
@@ -268,12 +268,13 @@ Soit le nombre complexe écrit sous la forme $z=r(\cos(\theta)+i\sin(\theta))$. 
 La démonstration est laissée à l'étudiante ou l'étudiant. __Astuce__: Il faut utiliser les séries de MacLaurin de $e^x$, $\sin(x)$ et $\cos(x)$.
 ```
 
-```{corollary}
+```{corollary, label = "sin-cos-ei"}
 Nous avons:
 \begin{align*}
 \cos(\theta) &= \dfrac{e^{i\theta}+e^{-i\theta}}{2} \\
 \sin(\theta) &= \dfrac{e^{i\theta}-e^{-i\theta}}{2i}
 \end{align*}
+
 ```
 ```{proof}
 Pour démontrer ce résultat, nous utiliserons le théorème \@ref(thm:identite-euler). Nous avons:
@@ -296,6 +297,8 @@ e^{i\theta}-e^{-i\theta} &= \cos(\theta)+i\sin(\theta)-(\cos(\theta)-i\sin(\thet
 &= 2i\sin(\theta) \\
 \sin(\theta) &= \dfrac{e^{i\theta}-e^{-i\theta}}{2i}
 \end{align*}
+
+
 ```
 
 ### Les équations différentielles *homogènes* à coefficients constants d'ordre 2
@@ -305,8 +308,191 @@ Une __équation différentielle *homogène* à coefficients constants d'ordre 2_
 \begin{align}
 a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0 (\#eq:homogene2)
 \end{align}
+où $a,b,c \in \mathbb{R}$ et $a\neq 0$.
 ```
 
+> Le terme *homogène* indique que le membre de droite de l'équation \@ref(eq:homogene2) est nul. Nous traiterons le cas à la section \@ref(non-homogene-2).
+
+Avant de résoudre ce type d'équations différentielles, la prochaine proposition sera cruciale.
+
+```{proposition, label = "combinaison-lineaire-solution"}
+Si $y_1(x)$ et $y_2(x)$ sont deux solutions de l'équation \@ref(eq:homogene2), alors $y(x)=C_1y_1(x)+C_2y_2(x)$, où $C_1,C_2\in\mathbb{R}$, est aussi une solution de l'équation \@ref(eq:homogene2).
+```
+```{proof}
+Nous avons que:
+\begin{align*}
+ay_1''+by_1'+cy_1 &= 0 \\
+ay_2''+by_2'+cy_2 &= 0
+\end{align*}
+car $y_1$ et $y_2$ sont des solutions de \@ref(eq:homogene2). Nous avons que:
+\begin{align*}
+y &= C_1y_1+C_2y_2 \\
+y' &= C_1y_1'+C_2y_2' \\
+y'' &= C_1y_1''+C_2y_2'' \\
+\end{align*}
+Ainsi:
+\begin{align*}
+ay''+by'+cy &= a(C_1y_1''+C_2y_2'')+b(C_1y_1'+C_2y_2')+c(C_1y_1+C_2y_2) \\
+&= C_1\underbrace{(ay_1''+by_1'+cy_1)}_{=\ 0}+C_2\underbrace{(ay_2''+by_2'+cy_2)}_{=\ 0} \\
+&= 0
+\end{align*}
+
+```
+
+> Une combinaison linéaire de solutions est aussi une solution.
+
+Nous pouvons maintenant résoudre l'équation \@ref(eq:homogene2)  en supposant que la solution est de la forme $y=e^{rx}$, où $r$ est une constante qu'il nous reste à déterminer. 
+
+> Pour résoudre une équation différentielle homogène d'ordre 2 à coefficients constants, il faut toujours poser la solution $y=e^{rx}$.
+
+Nous avons donc:
+\begin{align*}
+y &= e^{rx} \\
+y' &= re^{rx} \\
+y'' &= r^2e^{rx}
+\end{align*}
+
+Nous substituons ces résultats dans l'équation \@ref(eq:homogene2):
+\begin{align}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0 \notag\\
+ar^2e^{rx}+bre^{rx}+ce^{rx} &= 0 \notag\\
+e^{rx}(ar^2+br+c) &= 0 \notag\\
+ar^2+br+c &= 0 (\#eq:quadratique)
+\end{align}
+
+L'équation \@ref(eq:quadratique) se nomme polynôme caractéristique de l'équation \@ref(eq:homogene2). Déterminer les valeurs de $r$ revient à trouver les racines du polynôme caractéristique et donc:
+\begin{align*}
+r_{1,2} &= \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{align*}
+Nous devrons étudier trois cas distincts qui dépendent du discriminant $b^2-4ac$.
+
+#### Cas 1: $b^2-4ac>0$
+
+Dans ce cas, le polynôme caractéristique fournit deux valeurs de $r$ __réelles__, que nous notons $r_1$ et $r_2$. Nous avons donc $y_1(x)=e^{r_1x}$ qui est une solution de \@ref(eq:homogene2) et également $y_2=e^{r_2x}$. Par la proposition \@ref(prp:combinaison-lineaire-solution), nous obtenons la solution générale:
+\begin{align*}
+y(x) &= C_1e^{r_1x}+C_2e^{r_2x}
+\end{align*}
+où $C_1,C_2\in\mathbb{R}$.
+
+```{example}
+Résolvez l'équation différentielle $y''+y'-6y=0$ avec comme conditions initiales $y(0)=0$ et $y'(0)=1$.
+```
+\vspace*{10cm}
+
+
+#### Cas 2: $b^2-4ac<0$
+
+Dans ce cas, le polynôme caractéristique fournit deux valeurs de $r$ __complexes__. Posons $\gamma=-\dfrac{b}{2a}$ et $\omega=\dfrac{\sqrt{4ac-b^2}}{2a}$ ce qui implique que $r_1=\gamma+\omega i$ et $r_2=\gamma -\omega i$. Nous avons donc deux solutions à l'équation \@ref(eq:homogene2), soit $y_1=e^{r_1x}=e^{(\gamma+\omega i)x}$ et $y_2=e^{r_2x}=e^{(\gamma-\omega i)x}$.
+
+Puisque les solutions précédentes sont complexes, nous allons utiliser la proposition \@ref(prp:combinaison-lineaire-solution) et le corollaire \@ref(cor:sin-cos-ei) pour créer deux nouvelles solutions réelles:
+\begin{align*}
+y_3(x) &= \dfrac{y_1(x)+y_2(x)}{2} \\
+&= \dfrac{e^{(\gamma+\omega i)x}+e^{(\gamma-\omega i)x}}{2} \\
+&= e^{\gamma x}\left( \dfrac{e^{\omega i x}+e^{-\omega i x}}{2} \right) \\
+&= e^{\gamma x}\cos(\omega x) \\
+y_4(x) &= \dfrac{y_1(x)-y_2(x)}{2i} \\
+&= \dfrac{e^{(\gamma+\omega i)x}-e^{(\gamma-\omega i)x}}{2i} \\
+&= e^{\gamma x}\left( \dfrac{e^{\omega i x}-e^{-\omega i x}}{2i} \right) \\
+&= e^{\gamma x}\sin(\omega x)
+\end{align*}
+
+D'où la solution générale de l'équation \@ref(eq:homogene2) est:
+\begin{align*}
+y(x) &= e^{\gamma x}\left( C_1\cos(\omega x)+C_2\sin(\omega x) \right)
+\end{align*}
+
+```{example}
+Trouvez la solution de l'équation différentielle $y''+2y'+10y=0$ ayant comme conditions initiales $y(0)=0$ et $y'(0)=3$.
+```
+\vspace*{10cm}
+
+#### Cas 3: $b^2-4ac=0$
+
+Dans ce cas, nous n'obtenons qu'une seule valeur de $r=-\dfrac{b}{2a}$. Puisque nous n'avons qu'une seule solution, nous devons en trouver une autre pour être en mesure de construire une combinaison linéaire. Nous allons démontrer que $y_2(x)=xe^{rx}$ est aussi une solution de l'équation différentielle \@ref(eq:homogene2).
+```{proof}
+\begin{align*}
+y_2 &= xe^{rx} \\
+y_2' &= e^{rx}+rxe^{rx} \\
+y_2'' &= re^{rx}+re^{rx}+r^2xe^{rx}
+\end{align*}
+Et donc:
+\begin{align*}
+ay'' +by' +cy &= 0 \\
+a(2re^{rx}+r^2xe^{rx})+b(e^{rx}+rxe^{rx})+c(xe^{rx}) &= 0 \\
+e^{rx}(2ar+ar^2x+b+brx+cx) &= 0 \\
+e^{rx}(\underbrace{(ar^2+br+c)}_{=0}x+\underbrace{(2ar+b)}_{=0}) &= 0 
+\end{align*}
+
+```
+
+La solution générale est donc de la forme:
+\begin{align*}
+y(x) &= C_1e^{rx}+C_2xe^{rx}
+\end{align*}
+
+```{example}
+Trouvez la solution de l'équation différentielle $y''+2y'+y=0$.
+```
+\vspace*{5cm}
+
+```{example}
+Trouvez les solutions des équations différentielles suivantes:
+
+  a) $y''-9y'+20y=0$
+  a) $2y''-4y'+8y=0$
+  a) $y''+6y'+9=0$
+
+
+```
+\vspace*{20cm}
+
+### Les équations différentielles *non homogènes* à coefficients constants d'ordre 2 {#non-homogene-2}
+
+```{definition, name = "Équation différentielle *non homogène* à coefficients constants d'ordre 2"}
+Une __équation différentielle *non homogène* à coefficients constants d'ordre 2__ est une équation différentielle de la forme:
+\begin{align}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= F(x) (\#eq:nonhomogene2)
+\end{align}
+où $a,b,c \in \mathbb{R}$ et $a\neq 0$. De plus $F(x)$ est une fonction qui ne dépend que de la variable indépendante.
+```
+
+Pour résoudre ce type d'équations différentielles, nous aurons besoin du théorème suivant:
+
+```{theorem}
+Soit une équation différentielle de la forme:
+\begin{align*}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= F(x)
+\end{align*}
+La solution de cette équation différentielle est de la forme:
+\begin{align*}
+y(x) &= C_1y_1(x)+C_2y_2(x)+y_p
+\end{align*}
+où $y_1$ et $y_2$ sont les solutions de l'équation homogène associée à l'équation \@ref(eq:nonhomogene2), c'est-à-dire:
+\begin{align*}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0
+\end{align*}
+et $y_p$ est une solution particulière de l'équation non homogène.
+
+```
+```{proof}
+La démonstration est laissée à l'étudiante ou à l'étudiant.
+```
+
+Nous verrons deux méthodes pour trouver $y_p$.
+
+#### La méthode des coefficients indéterminés
+
+Cette méthode consiste à étudier la nature de la fonction $F(x)$ et à supposer que $y_p$ est de même nature. La table 
+
+Table: (\#tab:coeff-indetermines) Les diverses formes de coefficients indéterminés.
+
+|                        Forme de $F(x)$                       |               Forme de $y_p$               |
+|:------------------------------------------------------------:|:------------------------------------------:|
+|                     Polynôme de degré $n$                    | $y_p=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_x+a_0$ |
+| $F(x)$ possède un $\sin(\omega x)$ et/ou un $\cos(\omega x)$ |    $y_p=A\cos(\omega x)+B\sin(\omega x)$   |
+|        $F(x)$ possède une exponentielle $e^{\alpha x}$       |             $y_p=A^{\alpha x}$             |
+
+#### La méthode de variation des paramètres
 
 \newpage
 ## Pages supplémentaires
