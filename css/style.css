@@ -21,7 +21,7 @@ blockquote > p:last-child {
 blockquote > p:first-child {
   text-align: inherit;
 }
-div.exercise {
+div.example {
   border: 1px solid #ccc;
   padding: 5px;
   margin: 5px;

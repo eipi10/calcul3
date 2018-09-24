@@ -98,12 +98,12 @@ P_n(x)&=\sum_{k=0}^n\dfrac{f^{(k)}(0)}{k!}x^k=f(0)+f^{(1)}(0)x+\dfrac{f^{(2)}(0)
 \end{align*}
 ```
 
-```{exercise}
+```{example}
 Trouvez les polynômes de MacLaurin de degrés 1, 2 et 3 de $f(x)=e^x$.
 \vspace*{8cm}
 ```
 
-```{exercise}
+```{example}
 Trouvez les polynômes de MacLaurin de degrés 1, 2 et 3 de $f(x)=sin(x)$.
 \vspace*{8cm}
 ```
@@ -120,7 +120,7 @@ P_n(x)&=\sum_{k=0}^n\dfrac{f^{(k)}(a)}{k!}(x-a)^k\\
 \end{align*}
 ```
 
-```{exercise}
+```{example}
 Trouvez le polynôme de Taylor de $f(x)=\ln(x)$ de degré $4$ autour de $x=1$.
 \vspace*{8cm}
 ```
@@ -148,17 +148,17 @@ Comme la valeur $\xi(x)$ est rarement connue, nous utiliserons plutôt une borne
 \end{align*}
 où $M=\text{max}_{x\in I}\left\vert f^{(n+1)}(x) \right\vert$.
 
-```{exercise}
+```{example}
 Déterminez $|E_n(x)|$ lorsque vous utilisez le polynôme de MacLaurin de degré $3$ de $f(x)=e^x$ sur l'intervalle $[0,2]$. __Astuce__: supposez que $e<3$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Lorsque nous demandons à la calculatrice d'évaluer le nombre $e$, elle nous le donne avec une précision de $10^{-8}$, c'est-à-dire que l'erreur est inférieure à $10^{-8}$. Quel devrait être le degré du polynôme de MacLaurin pour $f(x)=e^x$ nécessaire pour obtenir cette précision? __Astuce__: supposez que $e<3$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Répondez aux questions suivantes:
   
  a) Approximez $f(x)=\sqrt[3]{x}$ par un polynôme de Taylor de degré 2 en $a=8$.
@@ -167,7 +167,7 @@ Répondez aux questions suivantes:
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Quelle est l'erreur maximale possible si on utilise l'approximation $\sin(x)=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}$ lorsque $-0,3\leq x \leq 0,3$? Utilisez l'approximation pour estimer $\sin(12^{\circ})$ avec six (6) décimales exactes.
 \vspace*{10cm}
 ```
@@ -185,22 +185,22 @@ Soit $f(x)$ une fonction infiniment dérivable en $x=a$. La série de Taylor de 
 Dans le cas où $a=0$, nous parlons également de série de MacLaurin.
 ```
 
-```{exercise}
+```{example}
 Déterminez la série de MacLaurin de $f(x)=e^x$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Déterminez la série de MacLaurin de $f(x)=\dfrac{1}{1-x}$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Déterminez la série de MacLaurin de $f(x)=\ln(1+x)$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Déterminez la série de MacLaurin de $f(x)=(1+x)^k$ où $k\in\mathbb{R}$.
 \vspace*{10cm}
 ```
@@ -238,27 +238,27 @@ Soit une série de la forme $\sum_{k=0}^{\infty}c_k$ et soit $L=\lim_{k\to\infty
 
 ```
 
-```{exercise}
+```{example}
 Déterminez l'intervalle de convergence de la série de MacLaurin de $f(x)=e^x$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Déterminez l'intervalle de convergence de la série de MacLaurin de $f(x)=\dfrac{1}{1-x}$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Déterminez l'intervalle de convergence de la série $\sum_{k=0}^{\infty} k! x^k$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 Déterminez l'intervalle de convergence de la série $\sum_{n=1}^{\infty} \dfrac{(x-3)^n}{n}$.
 \vspace*{10cm}
 ```
 
-```{exercise}
+```{example}
 La fonction de Bessel d'ordre 0, $J_0(x)=\sum_{n=0}^{\infty}\dfrac{(-1)^n x^{2n}}{2^{2n}(n!)^2}$ est solution de l'équation différentielle suivante $x^2\dfrac{d^2y}{dx^2}+x\dfrac{dy}{dx}+x^2y=0$ qui est utile lorsque nous étudions les modes de vibrations d'une membrane circulaire. Pour plus d'informations, [Wikipedia: Vibrations of a circular membrane](https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane). Trouvez l'intervalle de convergence de $J_0(x)$.
 \vspace*{10cm}
 ```
@@ -293,90 +293,90 @@ Pour obtenir des séries de Taylor, les opérations suivantes sont possibles:
  
 #### Changement de variables
 
-```{exercise}
+```{example}
 Trouvez la série de Taylor de $f(x)=e^{-x^2}$.
 ```
 \vspace*{10cm}
 
 #### Addition et soustraction
 
-```{exercise}
+```{example}
 Trouvez la limite $\lim_{x\to 0} \dfrac{e^x-1-x}{x^2}$ en trouvant au préalable la série de MacLaurin de $e^x-1-x$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Montrez que $e^{ix}=\cos(x)+i\sin(x)$.
 ```
 \vspace*{10cm}
 
 #### Multiplication
 
-```{exercise}
+```{example}
 Trouvez les trois premiers termes de la série de Maclaurin de $e^x\sin(x)$.
 ```
 \vspace*{10cm}
 
 #### Division
 
-```{exercise}
+```{example}
 Trouvez les trois premiers termes de la série de Maclaurin de $\tan(x)$.
 ```
 \vspace*{10cm}
 
 #### Dérivation
 
-```{exercise}
+```{example}
 Trouvez la série de Maclaurin de $\dfrac{1}{1+x}$ en dérivant la série de Maclaurin de $\ln(1+x)$.
 ```
 \vspace*{10cm}
 
 #### Intégration
 
-```{exercise}
+```{example}
 Trouvez la série de Maclaurin de $\text{Arctan}(x)$ en intégrant la série de MacLaurin de $\dfrac{1}{1+x^2}=\sum_{k=0}^{\infty}(-1)^kx^{2k}$.
 ```
 \vspace*{10cm}
 
 ## Applications
 
-```{exercise}
+```{example}
 À partir de la deuxième loi de Newton, nous pouvons montrer que l'angle $\theta$ que fait un pendule par rapport à la verticale  en fonction du temps, suit l'équation différentielle $\dfrac{d^2\theta}{dt^2}+\frac{g}{l}\sin(\theta)=0$ où $g$ est la constante gravitationnelle et $l$ la longueur du pendule. Malheureusement, il n'existe pas de solutions exactes pour cette équation différentielle. Par contre, il existe une méthode de résolution pour les équations différentielle de la forme $\dfrac{d^2y}{dt^2}+ky=0$. Écrivez l'équation du pendule sous la forme résoluble.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Soit un disque uniformément chargé de rayon $R$. Le potentiel électrique ressenti au point $P$ situé à une distance $d$ sur une droite perpendiculaire au disque et passant par son centre est donné par $V=2\pi k_e \sigma (\sqrt{d^2+R^2}-d)$. La constante $k_e$ représente la perméabilité du vide et la constante $\sigma$ la charge surfacique. Montrez que si $d$ est très grand par rapport à $R$ alors le potentiel électrique est $V \approx \dfrac{\pi k_e \sigma R^2}{d}$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Soit  deux charges équivalentes $Q$ et $-Q$ se trouvant à une distance $r$
 l'une de l'autre. Le champ électrique $E$ ressenti au point $P$, qui est à une distance $R$ de la charge $Q$ et de $R+r$ de la charge $-Q$, est donné par $E=\dfrac{Q}{R^2}-\dfrac{Q}{(R+r)^2}$. Montrez que lorsque $R$ est grand, le champ électrique est approximativement proportionnel à $\frac{1}{R^3}$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Soit un corps de masse $m$ situé à une distance $h$ de la surface de la Terre. La force gravitationnelle $F$ agissant sur ce corps est donnée par $F=\dfrac{mgR^2}{(R+h)^2}$ où $g$ est l'accélération gravitationnelle et $R$ le rayon de la terre. Montrez que lorsque $h$ est petit par rapport à $R$, la formule précédente devient $F\approx mg$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Les équations de Bessel sont données par $x^2\dfrac{d^2y}{dx^2}+x\dfrac{dy}{dx}+(x^2-n^2)y=0$ où $n\in\mathbb{N}$. Utilisez les séries de puissances pour trouver la solution de l'équation différentielle précédente lorsque $n=0$.
 ```
 \vspace*{20cm}
 
-```{exercise}
+```{example}
 Soit $f(x)=x\cos(2x)$. Trouvez $f^{(99)}(0)$ et $f^{(100)}(0)$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Soit $f(x)=x^2e^{-x}$. Trouvez $f^{(100)}(0)$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Soit $g(x)=x\ln(1+(2x)^2)$. Trouvez $g^{(51)}(0)$.
 ```
 \vspace*{10cm}

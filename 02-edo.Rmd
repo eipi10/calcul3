@@ -42,7 +42,7 @@ Voici quelques exemples d'ordre de diverses équations différentielles:
 Une fonction (ou une équation) est une __solution d'une équation différentielle__ si, en la remplaçant ainsi que ses dérivées dans l'équation différentielle, l'égalité est vérifiée.
 ```
 
-```{exercise}
+```{example}
 Vérifiez que $y(x)=e^{2x}$ est une solution de l'équation différentielle $\dfrac{d^2y}{dx^2}-3\dfrac{dy}{dx}+2y=0$.
 ```
 \vspace*{5cm}
@@ -51,7 +51,7 @@ Vérifiez que $y(x)=e^{2x}$ est une solution de l'équation différentielle $\df
 La __solution générale__ ou __famille de solutions__ d'une équation différentielle est l'ensemble de toutes les fonctions qui sont des solutions de l'équation différentielle.
 ```
 
-```{exercise}
+```{example}
 Montrez que $y(t)=t^2+C$ où $C\in\mathbb{R}$ est la solution générale de l'équation différentielle $\dfrac{dx}{dt}=2t$.
 ```
 \vspace*{5cm}
@@ -77,7 +77,7 @@ Pour trouver la solution d'une équation différentielle à variables séparable
  - Intégrer de chaque côté de l'égalité, c'est-à-dire $\int M(y)dy=\int N(x)dx$
 
 
-```{exercise}
+```{example}
 Résolvez l'équation différentielle suivante: $\cos(y)\dfrac{dy}{dt}=t^2$.
 ```
 \vspace*{8cm}
@@ -87,17 +87,17 @@ Résolvez l'équation différentielle suivante: $\cos(y)\dfrac{dy}{dt}=t^2$.
 Lorsque vous trouvez la solution d'une équation différentielle, il n'est pas toujours possible d'obtenir une équation explicite (c'est-à-dire une équation où la variable dépendante est isolée). 
 ```
 
-```{exercise}
+```{example}
 Trouvez la solution de l'équation différentielle $x+yy'=0$ passant par le point $(3,0)$.
 ```
 \vspace*{8cm}
 
-```{exercise, name = "Modèle de Hill-Keller"}
+```{example, name = "Modèle de Hill-Keller"}
 Le modèle de Hill-Keller permet de modéliser la course d'un coureur pour de courtes distances, par exemple le 100 m ou le 200 m. Si $F$ est une constante qui correspond à la force du coureur et $\tau$ est une constante représentant les forces de frottement du coureur, l'équation du modèle est donnée par: $\dfrac{dv}{dt}=F-\dfrac{v}{\tau}$. Trouvez la vitesse d'un coureur en fonction du temps si au temps initial la vitesse du coureur est nulle.
 ```
 \vspace*{10cm}
 
-```{exercise, name = "La tractrice"}
+```{example, name = "La tractrice"}
 Vous avez une laisse rigide de longueur $a$. Vous vous trouvez au point $(0,0)$ et votre chien se trouve au point $(a,0)$. Vous vous dirigez dans la direction de l'axe des $y$ positifs. L'équation différentielle qui permet de trouver le parcours de votre chien est $\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}$. Trouvez la solution de l'équation différentielle précédente.
 ```{r,echo=FALSE,fig.align="center"}
 knitr::include_graphics("resources/images/tractrice.png")
@@ -105,38 +105,117 @@ knitr::include_graphics("resources/images/tractrice.png")
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Trouvez les trajectoires orthogonales de la famille $x=ky^2$.
 ```
 \vspace*{8cm}
 
-```{exercise}
+```{example}
 Trouvez les trajectoires orthogonales de la famille $y=ke^x$.
 ```
 \vspace*{8cm}
 
-```{exercise}
+```{example, label = "parachutiste"}
 Soit un parachutiste qui tombe sous l'effet de la gravité avec une résistance de l'air proportionnelle à sa vitesse. L'équation différentielle de cette situation est : $\dfrac{dv}{dt}+\dfrac{kv}{m}=g$ où $m$, $g$ et $k$  sont des constantes positives. Trouvez la solution de l'équation différentielle précédente.
 ```
 \vspace*{8cm}
 
-```{exercise}
+```{example}
 La loi de refroidissement de Newton dit que le taux de variation de la température $T$ d'un objet est 
 proportionnel à la différence entre la température de cet objet et la température ambiante (notée $T_A$).
 Trouvez l'équation différentielle décrivant le phénomène et trouvez $T$ en fonction du temps.
 ```
 \vspace*{8cm}
 
+## Les équations différentielles linéaires
+
+```{definition, name = "Équation différentielle linéaire"}
+Une __équation différentielle linéaire__ est de la forme:
+\begin{align*}
+\dfrac{dy}{dt}+P(t)y=Q(t)
+\end{align*}
+où $P(t)$ et $Q(t)$ sont des fonctions qui ne doivent dépendre que de la variable indépendante.
+```
+
+```{example}
+Voici quelques exemples d'équations différentielles linéaires:
+
+ - $y'+t^2y=t^3$
+ - $x^3y'-x^4y=1$ (Aprés division par $x^2$)
+ - $y'=y$
+ 
+ 
+```
+
+
+Pour être en mesure de résoudre ce type d'équations différentielles, nous devrons tout d'abord utiliser une astuce.
+
+Posons $\mu(t)$ une fonction inconnue. Nous avons donc:
+\begin{align*}
+\dfrac{d}{dt}[\mu y] &= \mu\dfrac{dy}{dt}+y\dfrac{d\mu}{dt} \\
+&= \mu\left(Q(t)-P(t)y\right) + y\dfrac{d\mu}{dt} \qquad \text{car EDO linéaire}\\
+&= \mu Q(t)-\mu P(t)y +y\dfrac{d\mu}{dt} \\
+&= \mu Q(t)+y\left(\underbrace{\dfrac{d\mu}{dt}-\mu P(t)}_{\text{posons égal à 0}}\right)
+\end{align*}
+
+Ainsi:
+\begin{align*}
+\dfrac{d}{dt}[\mu y] &= \mu Q(t) \\
+\mu y &= \int \mu Q(t) \ dt\\
+y &= \dfrac{1}{\mu} \int \mu Q(t) \ dt
+\end{align*}
+
+Pour pouvoir résoudre l'intégrale précédente, nous avons besoin de connaître $\mu$ et nous savons que:
+\begin{align*}
+\dfrac{d\mu}{dt}-\mu P(t) &= 0 \\
+\dfrac{d\mu}{dt} &= \mu P(t) \\
+\int\dfrac{1}{\mu}d\mu &= \int P(t)dt \\
+\ln |\mu| &= \int P(t)dt \\
+\mu &= e^{\int P(t)dt}
+\end{align*}
+
+Pour résoudre une équation différentielle linéaire, il faut donc:
+
+ 1. Trouver $\mu$: $\mu = e^{\int P(t)dt}$
+ 1. Trouver $y$: $y = \dfrac{1}{\mu} \int \mu Q(t) \ dt$
+ 
+```{example}
+Trouvez la solution générale de $y'+3\dfrac{y}{t}=1$.
+```
+\vspace*{8cm}
+
+```{example}
+Trouvez la solution générale de $x^2y'+xy=1$ où $x>0$ et $y(1)=2$.
+```
+\vspace*{8cm}
+
+```{example}
+Trouvez la solution générale de $ty'+2y=t^2-t+1$.
+```
+\vspace*{8cm}
+
+```{example}
+Trouvez la solution générale de $\cos(x)y'+\sin(x)y=2\cos(x)^3\sin(x)-1$.
+```
+\vspace*{8cm}
+
+```{example}
+Résolvez l'équation différentielle du parachutiste, comme vu à l'exemple \@ref(exm:parachutiste), en utilisant les équations différentielles linéaires. L'équation différentielle est donnée par : $\dfrac{dv}{dt}+\dfrac{kv}{m}=g$.
+```
+\vspace*{8cm}
+
+### Problèmes de mélange
+
 Dans des problèmes de mélange, nous cherchons $Q(t)$ qui représente la quantité d'une substance en fonction du temps. L'équation différentielle de base de ce genre de problèmes est:
 
 > Taux de variation de $Q(t)$ = Taux d'entrée de $Q(t)$ - Taux de sortie de $Q(t)$
 
-```{exercise}
+```{example}
 Une cuve contient 10 L d'eau salée dans laquelle 2 kg de sel sont dissout. De l'eau salée contenant 1 kg de sel par litre entre dans la cuve à un débit constant de 3 L/min, et l'eau mélangée est vidée à un taux de 4 L/min. Trouvez la quantité de sel en fonction du temps $Q(t)$.
 ```
 \vspace*{10cm}
 
-```{exercise}
+```{example}
 Une cuve contient 40 L d'eau pure. De la saumure avec 3 kg de sel par litre entre dans la cuve à un débit constant de 2 L/min, et la mixture mélangée s'écoule à un débit constant de 3 L/min.
 
  a) Trouvez la quantité de sel en fonction du temps $Q(t)$.
@@ -146,6 +225,97 @@ Une cuve contient 40 L d'eau pure. De la saumure avec 3 kg de sel par litre entr
 ```
 \vspace*{10cm}
 
-## Les équations différentielles linéaires
+### Inverser la dérivée
+
+Pour obtenir une équation différentielle linéaire, il faut parfois étudier l'inverse de votre dérivée.
+
+> Plutôt que d'étudier $\dfrac{dy}{dx}$, nous pouvons étudier $\dfrac{dx}{dy}$.
+
+```{example}
+Trouvez la solution de l'équation différentielle $(e^y-2xy)\dfrac{dy}{dx}=y^2$.
+```
+\vspace*{8cm}
+
+```{example}
+Trouvez les familles de courbes orthogonales à $y^2=ce^x+x+1$ où $c\in\mathbb{R}$.
+```
+\vspace*{8cm}
 
 ## Les équations différentielles à coefficients constants d'ordre 2
+
+### Quelques rappels concernant les nombres complexes
+
+```{definition, name = "Nombre complexe"}
+Un nombre complexe $z$ s'écrit sous la forme $z=a+bi$, où $a,b \in \mathbb{R}$ et tel que $i^2=-1$. 
+
+Nous disons que $a$ est la partie réelle de $z$ et $b$ est la partie imaginaire de $z$.
+
+L'ensemble des nombres complexes est noté $\mathbb{C}$.
+
+Nous pouvons également écrire $z$ sous une form dite polaire qui est $z=r(\cos(\theta)+i\sin(\theta))$, où $r=\sqrt{a^2+b^2}$ et $\theta=\text{Arctan}\left(\dfrac{b}{a}\right)$.
+```
+
+La figure \@ref(fig:nombrescomplexes) permet de représenter un nombre complexe de façon géométrique.
+
+```{r,echo=FALSE,fig.align="center", fig.cap = "Représentation d'un nombre complexe", label = "nombrescomplexes"}
+knitr::include_graphics("resources/images/nombrescomplexes.png")
+```
+
+```{theorem, name = "L'identité d'Euler", label = "identite-euler"}
+Soit le nombre complexe écrit sous la forme $z=r(\cos(\theta)+i\sin(\theta))$. Alors ce nombre peut s'écrire de la manière suivante: $z=re^{i\theta}$.
+```
+```{proof}
+La démonstration est laissée à l'étudiante ou l'étudiant. __Astuce__: Il faut utiliser les séries de MacLaurin de $e^x$, $\sin(x)$ et $\cos(x)$.
+```
+
+```{corollary}
+Nous avons:
+\begin{align*}
+\cos(\theta) &= \dfrac{e^{i\theta}+e^{-i\theta}}{2} \\
+\sin(\theta) &= \dfrac{e^{i\theta}-e^{-i\theta}}{2i}
+\end{align*}
+```
+```{proof}
+Pour démontrer ce résultat, nous utiliserons le théorème \@ref(thm:identite-euler). Nous avons:
+\begin{align}
+e^{i\theta} &= \cos(\theta)+i\sin(\theta)  (\#eq:eplus) \\
+e^{-i\theta} &= \cos(-\theta)+i\sin(-\theta) \notag\\
+&= \cos(\theta)-i\sin(\theta)  (\#eq:emoins)
+\end{align}
+
+Si nous additions les équations \@ref(eq:eplus) et \@ref(eq:emoins):
+\begin{align*}
+e^{i\theta}+e^{-i\theta} &= \cos(\theta)+i\sin(\theta)+\cos(\theta)-i\sin(\theta) \\
+&= 2\cos(\theta) \\
+\cos(\theta) &= \dfrac{e^{i\theta}+e^{-i\theta}}{2}
+\end{align*}
+
+Si nous faisons la différence entre les équations \@ref(eq:eplus) et \@ref(eq:emoins):
+\begin{align*}
+e^{i\theta}-e^{-i\theta} &= \cos(\theta)+i\sin(\theta)-(\cos(\theta)-i\sin(\theta)) \\
+&= 2i\sin(\theta) \\
+\sin(\theta) &= \dfrac{e^{i\theta}-e^{-i\theta}}{2i}
+\end{align*}
+```
+
+### Les équations différentielles *homogènes* à coefficients constants d'ordre 2
+
+```{definition, name = "Équation différentielle *homogène* à coefficients constants d'ordre 2"}
+Une __équation différentielle *homogène* à coefficients constants d'ordre 2__ est une équation différentielle de la forme:
+\begin{align}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0 (\#eq:homogene2)
+\end{align}
+```
+
+
+\newpage
+## Pages supplémentaires
+
+Des pages blanches supplémentaires pour ajouter, potentiellement, de nouveaux exemples et exercices.
+
+<!-- Code pour insérer des pages blanches dans le document pdf pour des exemples supplémentaires. -->
+
+\multido{\i=0+1}{5}{
+\newpage
+\mbox{}
+}

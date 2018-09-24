@@ -25,7 +25,7 @@
 <meta name="author" content="Marc-André Désautels">
 
 
-<meta name="date" content="2018-09-21">
+<meta name="date" content="2018-09-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -87,8 +87,15 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="edo.html"><a href="edo.html"><i class="fa fa-check"></i><b>2</b> Les équations différentielles ordinaires</a><ul>
 <li class="chapter" data-level="2.1" data-path="edo.html"><a href="edo.html#les-equations-differentielles-a-variables-separables"><i class="fa fa-check"></i><b>2.1</b> Les équations différentielles à variables séparables</a></li>
-<li class="chapter" data-level="2.2" data-path="edo.html"><a href="edo.html#les-equations-differentielles-lineaires"><i class="fa fa-check"></i><b>2.2</b> Les équations différentielles linéaires</a></li>
-<li class="chapter" data-level="2.3" data-path="edo.html"><a href="edo.html#les-equations-differentielles-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3</b> Les équations différentielles à coefficients constants d’ordre 2</a></li>
+<li class="chapter" data-level="2.2" data-path="edo.html"><a href="edo.html#les-equations-differentielles-lineaires"><i class="fa fa-check"></i><b>2.2</b> Les équations différentielles linéaires</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="edo.html"><a href="edo.html#problemes-de-melange"><i class="fa fa-check"></i><b>2.2.1</b> Problèmes de mélange</a></li>
+<li class="chapter" data-level="2.2.2" data-path="edo.html"><a href="edo.html#inverser-la-derivee"><i class="fa fa-check"></i><b>2.2.2</b> Inverser la dérivée</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="edo.html"><a href="edo.html#les-equations-differentielles-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3</b> Les équations différentielles à coefficients constants d’ordre 2</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="edo.html"><a href="edo.html#quelques-rappels-concernant-les-nombres-complexes"><i class="fa fa-check"></i><b>2.3.1</b> Quelques rappels concernant les nombres complexes</a></li>
+<li class="chapter" data-level="2.3.2" data-path="edo.html"><a href="edo.html#les-equations-differentielles-homogenes-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3.2</b> Les équations différentielles <em>homogènes</em> à coefficients constants d’ordre 2</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="edo.html"><a href="edo.html#pages-supplementaires-1"><i class="fa fa-check"></i><b>2.4</b> Pages supplémentaires</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="coordpolaires.html"><a href="coordpolaires.html"><i class="fa fa-check"></i><b>3</b> Les coordonnées polaires</a></li>
 <li class="chapter" data-level="4" data-path="fctvar.html"><a href="fctvar.html"><i class="fa fa-check"></i><b>4</b> Les fonctions de plusieurs variables</a></li>
@@ -124,7 +131,7 @@
 </ul>
 
 <div class="definition">
-<span id="def:unnamed-chunk-41" class="definition"><strong>Définition 2.1  (Équation différentielle ordinaire)  </strong></span>Une <strong>équation différentielle ordinaire</strong> est une équation de la forme:
+<span id="def:unnamed-chunk-1" class="definition"><strong>Définition 2.1  (Équation différentielle ordinaire)  </strong></span>Une <strong>équation différentielle ordinaire</strong> est une équation de la forme:
 <span class="math display">\[\begin{align*}
 F(t, y, y^{(1)}, y^{(2)},\ldots, y^{(n)})=0
 \end{align*}\]</span>
@@ -133,7 +140,7 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-42" class="example"><strong>Exemple 2.1  </strong></span>Voici quelques exemples d’équations différentielles:</p>
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Exemple 2.1  </strong></span>Voici quelques exemples d’équations différentielles:</p>
 <ul>
 <li><span class="math inline">\(\dfrac{dy}{dt}=2ty\)</span></li>
 <li><span class="math inline">\((y^{(5)})^3+8ty^{(1)}+12y=1\)</span></li>
@@ -143,12 +150,12 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-43" class="definition"><strong>Définition 2.2  (L’ordre d’une équation différentielle)  </strong></span>L’<strong>ordre</strong> d’une équation différentielle est l’entier représentant l’ordre de la dérivée la plus élevée de la fonction inconnue apparaissant dans l’équation différentielle.
+<span id="def:unnamed-chunk-3" class="definition"><strong>Définition 2.2  (L’ordre d’une équation différentielle)  </strong></span>L’<strong>ordre</strong> d’une équation différentielle est l’entier représentant l’ordre de la dérivée la plus élevée de la fonction inconnue apparaissant dans l’équation différentielle.
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-44" class="example"><strong>Exemple 2.2  </strong></span>Voici quelques exemples d’ordre de diverses équations différentielles:</p>
+<p><span id="exm:unnamed-chunk-4" class="example"><strong>Exemple 2.2  </strong></span>Voici quelques exemples d’ordre de diverses équations différentielles:</p>
 <ul>
 <li><span class="math inline">\(\dfrac{dy}{dt}=2ty\)</span>, ordre de 1</li>
 <li><span class="math inline">\((y^{(5)})^3+8ty^{(1)}+12y=1\)</span>, ordre de 5</li>
@@ -158,27 +165,27 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-45" class="definition"><strong>Définition 2.3  (Solution d’une équation différentielle)  </strong></span>Une fonction (ou une équation) est une <strong>solution d’une équation différentielle</strong> si, en la remplaçant ainsi que ses dérivées dans l’équation différentielle, l’égalité est vérifiée.
+<span id="def:unnamed-chunk-5" class="definition"><strong>Définition 2.3  (Solution d’une équation différentielle)  </strong></span>Une fonction (ou une équation) est une <strong>solution d’une équation différentielle</strong> si, en la remplaçant ainsi que ses dérivées dans l’équation différentielle, l’égalité est vérifiée.
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-46" class="exercise"><strong>Exercice 2.1  </strong></span>Vérifiez que <span class="math inline">\(y(x)=e^{2x}\)</span> est une solution de l’équation différentielle <span class="math inline">\(\dfrac{d^2y}{dx^2}-3\dfrac{dy}{dx}+2y=0\)</span>.
-</div>
-
-
-<div class="definition">
-<span id="def:unnamed-chunk-47" class="definition"><strong>Définition 2.4  (Solution générale ou famille de solutions d’une équation différentielle)  </strong></span>La <strong>solution générale</strong> ou <strong>famille de solutions</strong> d’une équation différentielle est l’ensemble de toutes les fonctions qui sont des solutions de l’équation différentielle.
-</div>
-
-
-<div class="exercise">
-<span id="exr:unnamed-chunk-48" class="exercise"><strong>Exercice 2.2  </strong></span>Montrez que <span class="math inline">\(y(t)=t^2+C\)</span> où <span class="math inline">\(C\in\mathbb{R}\)</span> est la solution générale de l’équation différentielle <span class="math inline">\(\dfrac{dx}{dt}=2t\)</span>.
+<div class="example">
+<span id="exm:unnamed-chunk-6" class="example"><strong>Exemple 2.3  </strong></span>Vérifiez que <span class="math inline">\(y(x)=e^{2x}\)</span> est une solution de l’équation différentielle <span class="math inline">\(\dfrac{d^2y}{dx^2}-3\dfrac{dy}{dx}+2y=0\)</span>.
 </div>
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-49" class="definition"><strong>Définition 2.5  (Condition initiale et solution particulière d’une équation différentielle)  </strong></span>Une <strong>condition initiale</strong> d’une équation différentielle est un point (x_0,y_0) par lequel passe la solution, où <span class="math inline">\(x_0\)</span> et <span class="math inline">\(y_0\in\mathbb{R}\)</span>. Une solution de l’équation différentielle qui vérifie la condition initiale est appelée <strong>solution particulière</strong> de l’équation différentielle.
+<span id="def:unnamed-chunk-7" class="definition"><strong>Définition 2.4  (Solution générale ou famille de solutions d’une équation différentielle)  </strong></span>La <strong>solution générale</strong> ou <strong>famille de solutions</strong> d’une équation différentielle est l’ensemble de toutes les fonctions qui sont des solutions de l’équation différentielle.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-8" class="example"><strong>Exemple 2.4  </strong></span>Montrez que <span class="math inline">\(y(t)=t^2+C\)</span> où <span class="math inline">\(C\in\mathbb{R}\)</span> est la solution générale de l’équation différentielle <span class="math inline">\(\dfrac{dx}{dt}=2t\)</span>.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-9" class="definition"><strong>Définition 2.5  (Condition initiale et solution particulière d’une équation différentielle)  </strong></span>Une <strong>condition initiale</strong> d’une équation différentielle est un point (x_0,y_0) par lequel passe la solution, où <span class="math inline">\(x_0\)</span> et <span class="math inline">\(y_0\in\mathbb{R}\)</span>. Une solution de l’équation différentielle qui vérifie la condition initiale est appelée <strong>solution particulière</strong> de l’équation différentielle.
 </div>
 
 
@@ -190,7 +197,7 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 <h2><span class="header-section-number">2.1</span> Les équations différentielles à variables séparables</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-51" class="definition"><strong>Définition 2.6  (Équation différentielle à variables séparables)  </strong></span>Une <strong>équation différentielle à variables séparables</strong> est une équation différentielle qui peut s’écrire sous la forme <span class="math inline">\(M(y)dy=N(x)dx\)</span>.
+<span id="def:unnamed-chunk-11" class="definition"><strong>Définition 2.6  (Équation différentielle à variables séparables)  </strong></span>Une <strong>équation différentielle à variables séparables</strong> est une équation différentielle qui peut s’écrire sous la forme <span class="math inline">\(M(y)dy=N(x)dx\)</span>.
 </div>
 
 <p>Pour trouver la solution d’une équation différentielle à variables séparables, il faut:</p>
@@ -200,8 +207,8 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 <li>Intégrer de chaque côté de l’égalité, c’est-à-dire <span class="math inline">\(\int M(y)dy=\int N(x)dx\)</span></li>
 </ul>
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-52" class="exercise"><strong>Exercice 2.3  </strong></span>Résolvez l’équation différentielle suivante: <span class="math inline">\(\cos(y)\dfrac{dy}{dt}=t^2\)</span>.
+<div class="example">
+<span id="exm:unnamed-chunk-12" class="example"><strong>Exemple 2.5  </strong></span>Résolvez l’équation différentielle suivante: <span class="math inline">\(\cos(y)\dfrac{dy}{dt}=t^2\)</span>.
 </div>
 
 
@@ -210,57 +217,133 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercice 2.4  </strong></span>Trouvez la solution de l’équation différentielle <span class="math inline">\(x+yy&#39;=0\)</span> passant par le point <span class="math inline">\((3,0)\)</span>.
+<div class="example">
+<span id="exm:unnamed-chunk-14" class="example"><strong>Exemple 2.6  </strong></span>Trouvez la solution de l’équation différentielle <span class="math inline">\(x+yy&#39;=0\)</span> passant par le point <span class="math inline">\((3,0)\)</span>.
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-55" class="exercise"><strong>Exercice 2.5  (Modèle de Hill-Keller)  </strong></span>Le modèle de Hill-Keller permet de modéliser la course d’un coureur pour de courtes distances, par exemple le 100 m ou le 200 m. Si <span class="math inline">\(F\)</span> est une constante qui correspond à la force du coureur et <span class="math inline">\(\tau\)</span> est une constante représentant les forces de frottement du coureur, l’équation du modèle est donnée par: <span class="math inline">\(\dfrac{dv}{dt}=F-\dfrac{v}{\tau}\)</span>. Trouvez la vitesse d’un coureur en fonction du temps si au temps initial la vitesse du coureur est nulle.
+<div class="example">
+<span id="exm:unnamed-chunk-15" class="example"><strong>Exemple 2.7  (Modèle de Hill-Keller)  </strong></span>Le modèle de Hill-Keller permet de modéliser la course d’un coureur pour de courtes distances, par exemple le 100 m ou le 200 m. Si <span class="math inline">\(F\)</span> est une constante qui correspond à la force du coureur et <span class="math inline">\(\tau\)</span> est une constante représentant les forces de frottement du coureur, l’équation du modèle est donnée par: <span class="math inline">\(\dfrac{dv}{dt}=F-\dfrac{v}{\tau}\)</span>. Trouvez la vitesse d’un coureur en fonction du temps si au temps initial la vitesse du coureur est nulle.
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-56" class="exercise"><strong>Exercice 2.6  (La tractrice)  </strong></span>Vous avez une laisse rigide de longueur <span class="math inline">\(a\)</span>. Vous vous trouvez au point <span class="math inline">\((0,0)\)</span> et votre chien se trouve au point <span class="math inline">\((a,0)\)</span>. Vous vous dirigez dans la direction de l’axe des <span class="math inline">\(y\)</span> positifs. L’équation différentielle qui permet de trouver le parcours de votre chien est <span class="math inline">\(\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}\)</span>. Trouvez la solution de l’équation différentielle précédente.
+<div class="example">
+<span id="exm:unnamed-chunk-16" class="example"><strong>Exemple 2.8  (La tractrice)  </strong></span>Vous avez une laisse rigide de longueur <span class="math inline">\(a\)</span>. Vous vous trouvez au point <span class="math inline">\((0,0)\)</span> et votre chien se trouve au point <span class="math inline">\((a,0)\)</span>. Vous vous dirigez dans la direction de l’axe des <span class="math inline">\(y\)</span> positifs. L’équation différentielle qui permet de trouver le parcours de votre chien est <span class="math inline">\(\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}\)</span>. Trouvez la solution de l’équation différentielle précédente.
 </div>
 
 <p><img src="resources/images/tractrice.png" width="472" style="display: block; margin: auto;" />
 ```
 </p>
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-58" class="exercise"><strong>Exercice 2.7  </strong></span>Trouvez les trajectoires orthogonales de la famille <span class="math inline">\(x=ky^2\)</span>.
+<div class="example">
+<span id="exm:unnamed-chunk-18" class="example"><strong>Exemple 2.9  </strong></span>Trouvez les trajectoires orthogonales de la famille <span class="math inline">\(x=ky^2\)</span>.
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-59" class="exercise"><strong>Exercice 2.8  </strong></span>Trouvez les trajectoires orthogonales de la famille <span class="math inline">\(y=ke^x\)</span>.
+<div class="example">
+<span id="exm:unnamed-chunk-19" class="example"><strong>Exemple 2.10  </strong></span>Trouvez les trajectoires orthogonales de la famille <span class="math inline">\(y=ke^x\)</span>.
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-60" class="exercise"><strong>Exercice 2.9  </strong></span>Soit un parachutiste qui tombe sous l’effet de la gravité avec une résistance de l’air proportionnelle à sa vitesse. L’équation différentielle de cette situation est : <span class="math inline">\(\dfrac{dv}{dt}+\dfrac{kv}{m}=g\)</span> où <span class="math inline">\(m\)</span>, <span class="math inline">\(g\)</span> et <span class="math inline">\(k\)</span> sont des constantes positives. Trouvez la solution de l’équation différentielle précédente.
+<div class="example">
+<span id="exm:parachutiste" class="example"><strong>Exemple 2.11  </strong></span>Soit un parachutiste qui tombe sous l’effet de la gravité avec une résistance de l’air proportionnelle à sa vitesse. L’équation différentielle de cette situation est : <span class="math inline">\(\dfrac{dv}{dt}+\dfrac{kv}{m}=g\)</span> où <span class="math inline">\(m\)</span>, <span class="math inline">\(g\)</span> et <span class="math inline">\(k\)</span> sont des constantes positives. Trouvez la solution de l’équation différentielle précédente.
 </div>
 
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercice 2.10  </strong></span>La loi de refroidissement de Newton dit que le taux de variation de la température <span class="math inline">\(T\)</span> d’un objet est
+<div class="example">
+<span id="exm:unnamed-chunk-20" class="example"><strong>Exemple 2.12  </strong></span>La loi de refroidissement de Newton dit que le taux de variation de la température <span class="math inline">\(T\)</span> d’un objet est
 proportionnel à la différence entre la température de cet objet et la température ambiante (notée <span class="math inline">\(T_A\)</span>).
 Trouvez l’équation différentielle décrivant le phénomène et trouvez <span class="math inline">\(T\)</span> en fonction du temps.
 </div>
 
+</div>
+<div id="les-equations-differentielles-lineaires" class="section level2">
+<h2><span class="header-section-number">2.2</span> Les équations différentielles linéaires</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-21" class="definition"><strong>Définition 2.7  (Équation différentielle linéaire)  </strong></span>Une <strong>équation différentielle linéaire</strong> est de la forme:
+<span class="math display">\[\begin{align*}
+\dfrac{dy}{dt}+P(t)y=Q(t)
+\end{align*}\]</span>
+où <span class="math inline">\(P(t)\)</span> et <span class="math inline">\(Q(t)\)</span> sont des fonctions qui ne doivent dépendre que de la variable indépendante.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-22" class="example"><strong>Exemple 2.13  </strong></span>Voici quelques exemples d’équations différentielles linéaires:</p>
+<ul>
+<li><span class="math inline">\(y&#39;+t^2y=t^3\)</span></li>
+<li><span class="math inline">\(x^3y&#39;-x^4y=1\)</span> (Aprés division par <span class="math inline">\(x^2\)</span>)</li>
+<li><span class="math inline">\(y&#39;=y\)</span></li>
+</ul>
+</div>
+
+<p>Pour être en mesure de résoudre ce type d’équations différentielles, nous devrons tout d’abord utiliser une astuce.</p>
+<p>Posons <span class="math inline">\(\mu(t)\)</span> une fonction inconnue. Nous avons donc:
+<span class="math display">\[\begin{align*}
+\dfrac{d}{dt}[\mu y] &amp;= \mu\dfrac{dy}{dt}+y\dfrac{d\mu}{dt} \\
+&amp;= \mu\left(Q(t)-P(t)y\right) + y\dfrac{d\mu}{dt} \qquad \text{car EDO linéaire}\\
+&amp;= \mu Q(t)-\mu P(t)y +y\dfrac{d\mu}{dt} \\
+&amp;= \mu Q(t)+y\left(\underbrace{\dfrac{d\mu}{dt}-\mu P(t)}_{\text{posons égal à 0}}\right)
+\end{align*}\]</span></p>
+<p>Ainsi:
+<span class="math display">\[\begin{align*}
+\dfrac{d}{dt}[\mu y] &amp;= \mu Q(t) \\
+\mu y &amp;= \int \mu Q(t) \ dt\\
+y &amp;= \dfrac{1}{\mu} \int \mu Q(t) \ dt
+\end{align*}\]</span></p>
+<p>Pour pouvoir résoudre l’intégrale précédente, nous avons besoin de connaître <span class="math inline">\(\mu\)</span> et nous savons que:
+<span class="math display">\[\begin{align*}
+\dfrac{d\mu}{dt}-\mu P(t) &amp;= 0 \\
+\dfrac{d\mu}{dt} &amp;= \mu P(t) \\
+\int\dfrac{1}{\mu}d\mu &amp;= \int P(t)dt \\
+\ln |\mu| &amp;= \int P(t)dt \\
+\mu &amp;= e^{\int P(t)dt}
+\end{align*}\]</span></p>
+<p>Pour résoudre une équation différentielle linéaire, il faut donc:</p>
+<ol style="list-style-type: decimal">
+<li>Trouver <span class="math inline">\(\mu\)</span>: <span class="math inline">\(\mu = e^{\int P(t)dt}\)</span></li>
+<li>Trouver <span class="math inline">\(y\)</span>: <span class="math inline">\(y = \dfrac{1}{\mu} \int \mu Q(t) \ dt\)</span></li>
+</ol>
+
+<div class="example">
+<span id="exm:unnamed-chunk-23" class="example"><strong>Exemple 2.14  </strong></span>Trouvez la solution générale de <span class="math inline">\(y&#39;+3\dfrac{y}{t}=1\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-24" class="example"><strong>Exemple 2.15  </strong></span>Trouvez la solution générale de <span class="math inline">\(x^2y&#39;+xy=1\)</span> où <span class="math inline">\(x&gt;0\)</span> et <span class="math inline">\(y(1)=2\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-25" class="example"><strong>Exemple 2.16  </strong></span>Trouvez la solution générale de <span class="math inline">\(ty&#39;+2y=t^2-t+1\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-26" class="example"><strong>Exemple 2.17  </strong></span>Trouvez la solution générale de <span class="math inline">\(\cos(x)y&#39;+\sin(x)y=2\cos(x)^3\sin(x)-1\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-27" class="example"><strong>Exemple 2.18  </strong></span>Résolvez l’équation différentielle du parachutiste, comme vu à l’exemple <a href="edo.html#exm:parachutiste">2.11</a>, en utilisant les équations différentielles linéaires. L’équation différentielle est donnée par : <span class="math inline">\(\dfrac{dv}{dt}+\dfrac{kv}{m}=g\)</span>.
+</div>
+
+<div id="problemes-de-melange" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Problèmes de mélange</h3>
 <p>Dans des problèmes de mélange, nous cherchons <span class="math inline">\(Q(t)\)</span> qui représente la quantité d’une substance en fonction du temps. L’équation différentielle de base de ce genre de problèmes est:</p>
 <blockquote>
 <p>Taux de variation de <span class="math inline">\(Q(t)\)</span> = Taux d’entrée de <span class="math inline">\(Q(t)\)</span> - Taux de sortie de <span class="math inline">\(Q(t)\)</span></p>
 </blockquote>
 
-<div class="exercise">
-<span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercice 2.11  </strong></span>Une cuve contient 10 L d’eau salée dans laquelle 2 kg de sel sont dissout. De l’eau salée contenant 1 kg de sel par litre entre dans la cuve à un débit constant de 3 L/min, et l’eau mélangée est vidée à un taux de 4 L/min. Trouvez la quantité de sel en fonction du temps <span class="math inline">\(Q(t)\)</span>.
+<div class="example">
+<span id="exm:unnamed-chunk-28" class="example"><strong>Exemple 2.19  </strong></span>Une cuve contient 10 L d’eau salée dans laquelle 2 kg de sel sont dissout. De l’eau salée contenant 1 kg de sel par litre entre dans la cuve à un débit constant de 3 L/min, et l’eau mélangée est vidée à un taux de 4 L/min. Trouvez la quantité de sel en fonction du temps <span class="math inline">\(Q(t)\)</span>.
 </div>
 
 
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercice 2.12  </strong></span>Une cuve contient 40 L d’eau pure. De la saumure avec 3 kg de sel par litre entre dans la cuve à un débit constant de 2 L/min, et la mixture mélangée s’écoule à un débit constant de 3 L/min.</p>
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Exemple 2.20  </strong></span>Une cuve contient 40 L d’eau pure. De la saumure avec 3 kg de sel par litre entre dans la cuve à un débit constant de 2 L/min, et la mixture mélangée s’écoule à un débit constant de 3 L/min.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Trouvez la quantité de sel en fonction du temps <span class="math inline">\(Q(t)\)</span>.</li>
 <li>Quelle est la quantité de sel lorsqu’il reste 20 L dans la cuve?</li>
@@ -268,11 +351,103 @@ Trouvez l’équation différentielle décrivant le phénomène et trouvez <span
 </div>
 
 </div>
-<div id="les-equations-differentielles-lineaires" class="section level2">
-<h2><span class="header-section-number">2.2</span> Les équations différentielles linéaires</h2>
+<div id="inverser-la-derivee" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Inverser la dérivée</h3>
+<p>Pour obtenir une équation différentielle linéaire, il faut parfois étudier l’inverse de votre dérivée.</p>
+<blockquote>
+<p>Plutôt que d’étudier <span class="math inline">\(\dfrac{dy}{dx}\)</span>, nous pouvons étudier <span class="math inline">\(\dfrac{dx}{dy}\)</span>.</p>
+</blockquote>
+
+<div class="example">
+<span id="exm:unnamed-chunk-30" class="example"><strong>Exemple 2.21  </strong></span>Trouvez la solution de l’équation différentielle <span class="math inline">\((e^y-2xy)\dfrac{dy}{dx}=y^2\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-31" class="example"><strong>Exemple 2.22  </strong></span>Trouvez les familles de courbes orthogonales à <span class="math inline">\(y^2=ce^x+x+1\)</span> où <span class="math inline">\(c\in\mathbb{R}\)</span>.
+</div>
+
+</div>
 </div>
 <div id="les-equations-differentielles-a-coefficients-constants-dordre-2" class="section level2">
 <h2><span class="header-section-number">2.3</span> Les équations différentielles à coefficients constants d’ordre 2</h2>
+<div id="quelques-rappels-concernant-les-nombres-complexes" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Quelques rappels concernant les nombres complexes</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-32" class="definition"><strong>Définition 2.8  (Nombre complexe)  </strong></span>Un nombre complexe <span class="math inline">\(z\)</span> s’écrit sous la forme <span class="math inline">\(z=a+bi\)</span>, où <span class="math inline">\(a,b \in \mathbb{R}\)</span> et tel que <span class="math inline">\(i^2=-1\)</span>.</p>
+<p>Nous disons que <span class="math inline">\(a\)</span> est la partie réelle de <span class="math inline">\(z\)</span> et <span class="math inline">\(b\)</span> est la partie imaginaire de <span class="math inline">\(z\)</span>.</p>
+<p>L’ensemble des nombres complexes est noté <span class="math inline">\(\mathbb{C}\)</span>.</p>
+Nous pouvons également écrire <span class="math inline">\(z\)</span> sous une form dite polaire qui est <span class="math inline">\(z=r(\cos(\theta)+i\sin(\theta))\)</span>, où <span class="math inline">\(r=\sqrt{a^2+b^2}\)</span> et <span class="math inline">\(\theta=\text{Arctan}\left(\dfrac{b}{a}\right)\)</span>.
+</div>
+
+<p>La figure <a href="edo.html#fig:nombrescomplexes">2.1</a> permet de représenter un nombre complexe de façon géométrique.</p>
+<div class="figure" style="text-align: center"><span id="fig:nombrescomplexes"></span>
+<img src="resources/images/nombrescomplexes.png" alt="Représentation d'un nombre complexe" width="2946" />
+<p class="caption">
+Figure 2.1: Représentation d’un nombre complexe
+</p>
+</div>
+
+<div class="theorem">
+<span id="thm:identite-euler" class="theorem"><strong>Théorème 2.1  (L’identité d’Euler)  </strong></span>Soit le nombre complexe écrit sous la forme <span class="math inline">\(z=r(\cos(\theta)+i\sin(\theta))\)</span>. Alors ce nombre peut s’écrire de la manière suivante: <span class="math inline">\(z=re^{i\theta}\)</span>.
+</div>
+
+
+<div class="proof">
+ <span class="proof"><em>Preuve. </em></span> La démonstration est laissée à l’étudiante ou l’étudiant. <strong>Astuce</strong>: Il faut utiliser les séries de MacLaurin de <span class="math inline">\(e^x\)</span>, <span class="math inline">\(\sin(x)\)</span> et <span class="math inline">\(\cos(x)\)</span>.
+</div>
+
+
+<div class="corollary">
+<span id="cor:unnamed-chunk-34" class="corollary"><strong>Corollaire 2.1  </strong></span>Nous avons:
+<span class="math display">\[\begin{align*}
+\cos(\theta) &amp;= \dfrac{e^{i\theta}+e^{-i\theta}}{2} \\
+\sin(\theta) &amp;= \dfrac{e^{i\theta}-e^{-i\theta}}{2i}
+\end{align*}\]</span>
+</div>
+
+
+<div class="proof">
+<p> <span class="proof"><em>Preuve. </em></span> Pour démontrer ce résultat, nous utiliserons le théorème <a href="edo.html#thm:identite-euler">2.1</a>. Nous avons:
+<span class="math display" id="eq:emoins" id="eq:eplus">\[\begin{align}
+e^{i\theta} &amp;= \cos(\theta)+i\sin(\theta)  \tag{2.1} \\
+e^{-i\theta} &amp;= \cos(-\theta)+i\sin(-\theta) \notag\\
+&amp;= \cos(\theta)-i\sin(\theta)  \tag{2.2}
+\end{align}\]</span></p>
+<p>Si nous additions les équations <a href="edo.html#eq:eplus">(2.1)</a> et <a href="edo.html#eq:emoins">(2.2)</a>:
+<span class="math display">\[\begin{align*}
+e^{i\theta}+e^{-i\theta} &amp;= \cos(\theta)+i\sin(\theta)+\cos(\theta)-i\sin(\theta) \\
+&amp;= 2\cos(\theta) \\
+\cos(\theta) &amp;= \dfrac{e^{i\theta}+e^{-i\theta}}{2}
+\end{align*}\]</span></p>
+Si nous faisons la différence entre les équations <a href="edo.html#eq:eplus">(2.1)</a> et <a href="edo.html#eq:emoins">(2.2)</a>:
+<span class="math display">\[\begin{align*}
+e^{i\theta}-e^{-i\theta} &amp;= \cos(\theta)+i\sin(\theta)-(\cos(\theta)-i\sin(\theta)) \\
+&amp;= 2i\sin(\theta) \\
+\sin(\theta) &amp;= \dfrac{e^{i\theta}-e^{-i\theta}}{2i}
+\end{align*}\]</span>
+</div>
+
+</div>
+<div id="les-equations-differentielles-homogenes-a-coefficients-constants-dordre-2" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Les équations différentielles <em>homogènes</em> à coefficients constants d’ordre 2</h3>
+
+<div class="definition">
+<span id="def:unnamed-chunk-36" class="definition"><strong>Définition 2.9  (Équation différentielle <em>homogène</em> à coefficients constants d’ordre 2)  </strong></span>Une <strong>équation différentielle <em>homogène</em> à coefficients constants d’ordre 2</strong> est une équation différentielle de la forme:
+<span class="math display" id="eq:homogene2">\[\begin{align}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &amp;= 0 \tag{2.3}
+\end{align}\]</span>
+</div>
+
+
+</div>
+</div>
+<div id="pages-supplementaires-1" class="section level2">
+<h2><span class="header-section-number">2.4</span> Pages supplémentaires</h2>
+<p>Des pages blanches supplémentaires pour ajouter, potentiellement, de nouveaux exemples et exercices.</p>
+<!-- Code pour insérer des pages blanches dans le document pdf pour des exemples supplémentaires. -->
+
 
 </div>
 </div>
