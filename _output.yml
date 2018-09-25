@@ -21,14 +21,15 @@ bookdown::pdf_book:
   toc: true
   toc_unnumbered: true
   toc_appendix: true
-  toc_depth: 2
+  toc_depth: 3
   includes:
     in_header: latex/preamble.tex
-  latex_engine: pdflatex
+  latex_engine: xelatex
   citation_package: natbib
-  keep_tex: false
   highlight: tango
   number_sections: true
+  keep_tex: yes
 
-bookdown::epub_book: default
-
+bookdown::epub_book:
+  dev: svglite
+  stylesheet: css/style.css

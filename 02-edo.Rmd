@@ -100,8 +100,8 @@ Le modèle de Hill-Keller permet de modéliser la course d'un coureur pour de co
 ```{example, name = "La tractrice"}
 Vous avez une laisse rigide de longueur $a$. Vous vous trouvez au point $(0,0)$ et votre chien se trouve au point $(a,0)$. Vous vous dirigez dans la direction de l'axe des $y$ positifs. L'équation différentielle qui permet de trouver le parcours de votre chien est $\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}$. Trouvez la solution de l'équation différentielle précédente.
 ```
-```{r,echo=FALSE,fig.align="center"}
-knitr::include_graphics("resources/images/tractrice.png")
+```{r,echo=FALSE,fig.align="center",out.width = "75%"}
+knitr::include_graphics("resources/images/latex/tractrice.png")
 ```
 \vspace*{10cm}
 
@@ -257,8 +257,8 @@ Nous pouvons également écrire $z$ sous une form dite polaire qui est $z=r(\cos
 
 La figure \@ref(fig:nombrescomplexes) permet de représenter un nombre complexe de façon géométrique.
 
-```{r,echo=FALSE,fig.align="center", fig.cap = "Représentation d'un nombre complexe", label = "nombrescomplexes"}
-knitr::include_graphics("resources/images/nombrescomplexes.png")
+```{r,echo=FALSE,fig.align="center",label="nombrescomplexes",out.width="50%",fig.cap="Représentation d'un nombre complexe"}
+knitr::include_graphics("resources/images/latex/nombrescomplexes.png")
 ```
 
 ```{theorem, name = "L'identité d'Euler", label = "identite-euler"}
@@ -301,10 +301,10 @@ e^{i\theta}-e^{-i\theta} &= \cos(\theta)+i\sin(\theta)-(\cos(\theta)-i\sin(\thet
 
 ```
 
-### Les équations différentielles *homogènes* à coefficients constants d'ordre 2
+### Les équations différentielles homogènes à coefficients constants d'ordre 2
 
-```{definition, name = "Équation différentielle *homogène* à coefficients constants d'ordre 2"}
-Une __équation différentielle *homogène* à coefficients constants d'ordre 2__ est une équation différentielle de la forme:
+```{definition, name = "Équation différentielle homogène à coefficients constants d'ordre 2"}
+Une __équation différentielle homogène à coefficients constants d'ordre 2__ est une équation différentielle de la forme:
 \begin{align}
 a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0 (\#eq:homogene2)
 \end{align}
@@ -446,10 +446,10 @@ Trouvez les solutions des équations différentielles suivantes:
 ```
 \vspace*{20cm}
 
-### Les équations différentielles *non homogènes* à coefficients constants d'ordre 2 {#non-homogene-2}
+### Les équations différentielles non homogènes à coefficients constants d'ordre 2 {#non-homogene-2}
 
-```{definition, name = "Équation différentielle *non homogène* à coefficients constants d'ordre 2"}
-Une __équation différentielle *non homogène* à coefficients constants d'ordre 2__ est une équation différentielle de la forme:
+```{definition, name = "Équation différentielle non homogène à coefficients constants d'ordre 2"}
+Une __équation différentielle non homogène à coefficients constants d'ordre 2__ est une équation différentielle de la forme:
 \begin{align}
 a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= F(x) (\#eq:nonhomogene2)
 \end{align}
@@ -482,7 +482,7 @@ Nous verrons deux méthodes pour trouver $y_p$.
 
 #### La méthode des coefficients indéterminés
 
-Cette méthode consiste à étudier la nature de la fonction $F(x)$ et à supposer que $y_p$ est de même nature. La table 
+Cette méthode consiste à étudier la nature de la fonction $F(x)$ et à supposer que $y_p$ est de même nature. La table \@ref(tab:coeff-indetermines) montre la forme de la solution particulière $y_p$ selon la nature de $F(x)$.
 
 Table: (\#tab:coeff-indetermines) Les diverses formes de coefficients indéterminés.
 
@@ -492,7 +492,103 @@ Table: (\#tab:coeff-indetermines) Les diverses formes de coefficients indétermi
 | $F(x)$ possède un $\sin(\omega x)$ et/ou un $\cos(\omega x)$ |    $y_p=A\cos(\omega x)+B\sin(\omega x)$   |
 |        $F(x)$ possède une exponentielle $e^{\alpha x}$       |             $y_p=A^{\alpha x}$             |
 
-#### La méthode de variation des paramètres
+```{example}
+Trouvez la solution générale de l'équation différentielle $y''+y'-6y=3x^2$.
+```
+\vspace*{10cm}
+
+```{example}
+Trouvez la solution générale de l'équation différentielle $y''+y'-6y=e^{4x}+\cos(3x)$.
+```
+\vspace*{10cm}
+
+
+#### La méthode de variation des paramètres (ou méthode de Lagrange)
+
+La méthode de variation des paramètres est souvent plus longue à utiliser que la méthode des coefficients indéterminés, par contre, elle est valide pour tous les types de fonctions $F(x)$.
+
+Nous débutons en trouvant les solutions $y_1$ et $y_2$ de l'équation différentielle homogène associée à l'équation:
+\begin{align*}
+ay''+by'+cy=F(x)
+\end{align*}
+
+Supposons que la solution est de la forme :
+\begin{align*}
+y(x) &= \mu_1(x)y_1(x)+\mu_2(x)y_2(x)
+\end{align*}
+Afin d'alléger la notation, nous omettrons la dépendance en $x$. Nous cherchons donc $\mu_1$ et $\mu_2$. Avant de substituer dans l'équation différentielle, nous allons trouver les dérivées successives de $y$.
+\begin{align*}
+y' &= \mu_1y_1'+\mu_1'y_1+\mu_2'y_2+\mu_2y_2'
+\end{align*}
+Nous allons maintenant faire la supposition que $\mu_1'y_1+\mu_2'y_2=0$ et donc:
+\begin{align*}
+y' &= \mu_1y_1'+\mu_2y_2'
+\end{align*}
+Trouvons maintenant la dérivée seconde:
+\begin{align*}
+y' &= \mu_1'y_1'+\mu_1y_1''+\mu_2'y_2'+\mu_2y_2''
+\end{align*}
+Nous avons donc:
+\begin{align*}
+ay''+by'+cy &= F(x) \\
+a(\mu_1'y_1'+\mu_1y_1''+\mu_2'y_2'+\mu_2y_2'')+b(\mu_1y_1'+\mu_2y_2')+c(\mu_1y_1+\mu_2y_2) &= F(x) \\
+\mu_1\underbrace{(ay_1''+by_1'+cy_1)}_{=0}+\mu_2\underbrace{(ay_2''+by_2'+cy_2)}_{=0}+\mu_1'y_1'+\mu_2'y_2' &= F(x) \\
+\mu_1'y_1'+\mu_2'y_2' &= F(x)
+\end{align*}
+Ainsi, pour déterminer $\mu_1$ et $\mu_2$, nous avons les deux équations suivantes:
+\begin{align*}
+\mu_1'y_1+\mu_2'y_2 &= 0 \\
+\mu_1'y_1'+\mu_2'y_2' &= F(x)
+\end{align*}
+Nous pouvons utiliser la méthode de Cramer pour résoudre ce système d'équations linéaires:
+\begin{align*}
+\mu_1'&= \dfrac{
+\begin{vmatrix}
+0&y_2\\
+F(x)&y_2'
+\end{vmatrix}}{
+\begin{vmatrix}
+y_1 &y_2\\
+y_1'&y_2'
+\end{vmatrix}
+}=-\dfrac{y_2F(x)}{W(y_1,y_2)}\\
+\mu_2'&= \dfrac{
+\begin{vmatrix}
+y_1&0\\
+y_1'&F(x)
+\end{vmatrix}}{
+\begin{vmatrix}
+y_1 &y_2\\
+y_1'&y_2'
+\end{vmatrix}
+}=\dfrac{y_1F(x)}{W(y_1,y_2)}
+\end{align*}
+
+```{definition,name="Wronskien"}
+Nous appelons le __Wronskien__ de deux fonctions $y_1$ et $y_2$, le résultat suivant:
+\begin{align*}
+W(y_1,y_2)=\begin{vmatrix}
+y_1 &y_2\\
+y_1'&y_2'
+\end{vmatrix}
+\end{align*}
+
+```
+
+```{remark}
+Le __Wronskien__ n'est jamais égal à zéro lorsque nous résolvons une équation différentielle car $y_1$ et $y_2$ sont choisies pour être linéairement indépendantes.
+```
+
+Nous pouvons maintenant trouver nos deux fonctions $\mu_1$ et $\mu_2$:
+\begin{align*}
+\mu_1&=-\int \dfrac{y_2(x)F(x)}{W(y_1,y_2)}dx\\
+\mu_2&=\int \dfrac{y_1(x)F(x)}{W(y_1,y_2)}dx
+\end{align*}
+
+## Applications des équations différentielles du deuxième ordre à coefficients constants
+
+## GeoGebra {#geogebra-edo}
+
 
 \newpage
 ## Pages supplémentaires

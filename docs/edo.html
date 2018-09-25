@@ -25,7 +25,7 @@
 <meta name="author" content="Marc-André Désautels">
 
 
-<meta name="date" content="2018-09-24">
+<meta name="date" content="2018-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,10 +93,12 @@
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="edo.html"><a href="edo.html#les-equations-differentielles-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3</b> Les équations différentielles à coefficients constants d’ordre 2</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="edo.html"><a href="edo.html#quelques-rappels-concernant-les-nombres-complexes"><i class="fa fa-check"></i><b>2.3.1</b> Quelques rappels concernant les nombres complexes</a></li>
-<li class="chapter" data-level="2.3.2" data-path="edo.html"><a href="edo.html#les-equations-differentielles-homogenes-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3.2</b> Les équations différentielles <em>homogènes</em> à coefficients constants d’ordre 2</a></li>
-<li class="chapter" data-level="2.3.3" data-path="edo.html"><a href="edo.html#non-homogene-2"><i class="fa fa-check"></i><b>2.3.3</b> Les équations différentielles <em>non homogènes</em> à coefficients constants d’ordre 2</a></li>
+<li class="chapter" data-level="2.3.2" data-path="edo.html"><a href="edo.html#les-equations-differentielles-homogenes-a-coefficients-constants-dordre-2"><i class="fa fa-check"></i><b>2.3.2</b> Les équations différentielles homogènes à coefficients constants d’ordre 2</a></li>
+<li class="chapter" data-level="2.3.3" data-path="edo.html"><a href="edo.html#non-homogene-2"><i class="fa fa-check"></i><b>2.3.3</b> Les équations différentielles non homogènes à coefficients constants d’ordre 2</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="edo.html"><a href="edo.html#pages-supplementaires-1"><i class="fa fa-check"></i><b>2.4</b> Pages supplémentaires</a></li>
+<li class="chapter" data-level="2.4" data-path="edo.html"><a href="edo.html#applications-des-equations-differentielles-du-deuxieme-ordre-a-coefficients-constants"><i class="fa fa-check"></i><b>2.4</b> Applications des équations différentielles du deuxième ordre à coefficients constants</a></li>
+<li class="chapter" data-level="2.5" data-path="edo.html"><a href="edo.html#geogebra-edo"><i class="fa fa-check"></i><b>2.5</b> GeoGebra</a></li>
+<li class="chapter" data-level="2.6" data-path="edo.html"><a href="edo.html#pages-supplementaires-1"><i class="fa fa-check"></i><b>2.6</b> Pages supplémentaires</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="coordpolaires.html"><a href="coordpolaires.html"><i class="fa fa-check"></i><b>3</b> Les coordonnées polaires</a></li>
 <li class="chapter" data-level="4" data-path="fctvar.html"><a href="fctvar.html"><i class="fa fa-check"></i><b>4</b> Les fonctions de plusieurs variables</a></li>
@@ -232,7 +234,7 @@ où <span class="math inline">\(y\)</span> est une fonction inconnue de <span cl
 <span id="exm:unnamed-chunk-56" class="example"><strong>Exemple 2.8  (La tractrice)  </strong></span>Vous avez une laisse rigide de longueur <span class="math inline">\(a\)</span>. Vous vous trouvez au point <span class="math inline">\((0,0)\)</span> et votre chien se trouve au point <span class="math inline">\((a,0)\)</span>. Vous vous dirigez dans la direction de l’axe des <span class="math inline">\(y\)</span> positifs. L’équation différentielle qui permet de trouver le parcours de votre chien est <span class="math inline">\(\dfrac{dy}{dx}=-\dfrac{\sqrt{a^2-x^2}}{x}\)</span>. Trouvez la solution de l’équation différentielle précédente.
 </div>
 
-<p><img src="resources/images/tractrice.png" width="472" style="display: block; margin: auto;" />
+<p><img src="resources/images/latex/tractrice.png" width="75%" style="display: block; margin: auto;" />
 </p>
 
 <div class="example">
@@ -383,7 +385,7 @@ Nous pouvons également écrire <span class="math inline">\(z\)</span> sous une 
 
 <p>La figure <a href="edo.html#fig:nombrescomplexes">2.1</a> permet de représenter un nombre complexe de façon géométrique.</p>
 <div class="figure" style="text-align: center"><span id="fig:nombrescomplexes"></span>
-<img src="resources/images/nombrescomplexes.png" alt="Représentation d'un nombre complexe" width="2946" />
+<img src="resources/images/latex/nombrescomplexes.png" alt="Représentation d'un nombre complexe" width="50%" />
 <p class="caption">
 Figure 2.1: Représentation d’un nombre complexe
 </p>
@@ -431,10 +433,10 @@ e^{i\theta}-e^{-i\theta} &amp;= \cos(\theta)+i\sin(\theta)-(\cos(\theta)-i\sin(\
 
 </div>
 <div id="les-equations-differentielles-homogenes-a-coefficients-constants-dordre-2" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Les équations différentielles <em>homogènes</em> à coefficients constants d’ordre 2</h3>
+<h3><span class="header-section-number">2.3.2</span> Les équations différentielles homogènes à coefficients constants d’ordre 2</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-75" class="definition"><strong>Définition 2.9  (Équation différentielle <em>homogène</em> à coefficients constants d’ordre 2)  </strong></span>Une <strong>équation différentielle <em>homogène</em> à coefficients constants d’ordre 2</strong> est une équation différentielle de la forme:
+<span id="def:unnamed-chunk-75" class="definition"><strong>Définition 2.9  (Équation différentielle homogène à coefficients constants d’ordre 2)  </strong></span>Une <strong>équation différentielle homogène à coefficients constants d’ordre 2</strong> est une équation différentielle de la forme:
 <span class="math display" id="eq:homogene2">\[\begin{align}
 a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &amp;= 0 \tag{2.3}
 \end{align}\]</span>
@@ -574,10 +576,10 @@ y(x) &amp;= C_1e^{rx}+C_2xe^{rx}
 </div>
 </div>
 <div id="non-homogene-2" class="section level3">
-<h3><span class="header-section-number">2.3.3</span> Les équations différentielles <em>non homogènes</em> à coefficients constants d’ordre 2</h3>
+<h3><span class="header-section-number">2.3.3</span> Les équations différentielles non homogènes à coefficients constants d’ordre 2</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-82" class="definition"><strong>Définition 2.10  (Équation différentielle <em>non homogène</em> à coefficients constants d’ordre 2)  </strong></span>Une <strong>équation différentielle <em>non homogène</em> à coefficients constants d’ordre 2</strong> est une équation différentielle de la forme:
+<span id="def:unnamed-chunk-82" class="definition"><strong>Définition 2.10  (Équation différentielle non homogène à coefficients constants d’ordre 2)  </strong></span>Une <strong>équation différentielle non homogène à coefficients constants d’ordre 2</strong> est une équation différentielle de la forme:
 <span class="math display" id="eq:nonhomogene2">\[\begin{align}
 a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &amp;= F(x) \tag{2.5}
 \end{align}\]</span>
@@ -610,7 +612,7 @@ et <span class="math inline">\(y_p\)</span> est une solution particulière de l�
 <p>Nous verrons deux méthodes pour trouver <span class="math inline">\(y_p\)</span>.</p>
 <div id="la-methode-des-coefficients-indetermines" class="section level4">
 <h4><span class="header-section-number">2.3.3.1</span> La méthode des coefficients indéterminés</h4>
-<p>Cette méthode consiste à étudier la nature de la fonction <span class="math inline">\(F(x)\)</span> et à supposer que <span class="math inline">\(y_p\)</span> est de même nature. La table</p>
+<p>Cette méthode consiste à étudier la nature de la fonction <span class="math inline">\(F(x)\)</span> et à supposer que <span class="math inline">\(y_p\)</span> est de même nature. La table <a href="edo.html#tab:coeff-indetermines">2.1</a> montre la forme de la solution particulière <span class="math inline">\(y_p\)</span> selon la nature de <span class="math inline">\(F(x)\)</span>.</p>
 <table>
 <caption><span id="tab:coeff-indetermines">Table 2.1: </span> Les diverses formes de coefficients indéterminés.</caption>
 <colgroup>
@@ -638,15 +640,108 @@ et <span class="math inline">\(y_p\)</span> est une solution particulière de l�
 </tr>
 </tbody>
 </table>
+
+<div class="example">
+<span id="exm:unnamed-chunk-85" class="example"><strong>Exemple 2.27  </strong></span>Trouvez la solution générale de l’équation différentielle <span class="math inline">\(y&#39;&#39;+y&#39;-6y=3x^2\)</span>.
 </div>
-<div id="la-methode-de-variation-des-parametres" class="section level4">
-<h4><span class="header-section-number">2.3.3.2</span> La méthode de variation des paramètres</h4>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-86" class="example"><strong>Exemple 2.28  </strong></span>Trouvez la solution générale de l’équation différentielle <span class="math inline">\(y&#39;&#39;+y&#39;-6y=e^{4x}+\cos(3x)\)</span>.
+</div>
 
 </div>
+<div id="la-methode-de-variation-des-parametres-ou-methode-de-lagrange" class="section level4">
+<h4><span class="header-section-number">2.3.3.2</span> La méthode de variation des paramètres (ou méthode de Lagrange)</h4>
+<p>La méthode de variation des paramètres est souvent plus longue à utiliser que la méthode des coefficients indéterminés, par contre, elle est valide pour tous les types de fonctions <span class="math inline">\(F(x)\)</span>.</p>
+<p>Nous débutons en trouvant les solutions <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span> de l’équation différentielle homogène associée à l’équation:
+<span class="math display">\[\begin{align*}
+ay&#39;&#39;+by&#39;+cy=F(x)
+\end{align*}\]</span></p>
+<p>Supposons que la solution est de la forme :
+<span class="math display">\[\begin{align*}
+y(x) &amp;= \mu_1(x)y_1(x)+\mu_2(x)y_2(x)
+\end{align*}\]</span>
+Afin d’alléger la notation, nous omettrons la dépendance en <span class="math inline">\(x\)</span>. Nous cherchons donc <span class="math inline">\(\mu_1\)</span> et <span class="math inline">\(\mu_2\)</span>. Avant de substituer dans l’équation différentielle, nous allons trouver les dérivées successives de <span class="math inline">\(y\)</span>.
+<span class="math display">\[\begin{align*}
+y&#39; &amp;= \mu_1y_1&#39;+\mu_1&#39;y_1+\mu_2&#39;y_2+\mu_2y_2&#39;
+\end{align*}\]</span>
+Nous allons maintenant faire la supposition que <span class="math inline">\(\mu_1&#39;y_1+\mu_2&#39;y_2=0\)</span> et donc:
+<span class="math display">\[\begin{align*}
+y&#39; &amp;= \mu_1y_1&#39;+\mu_2y_2&#39;
+\end{align*}\]</span>
+Trouvons maintenant la dérivée seconde:
+<span class="math display">\[\begin{align*}
+y&#39; &amp;= \mu_1&#39;y_1&#39;+\mu_1y_1&#39;&#39;+\mu_2&#39;y_2&#39;+\mu_2y_2&#39;&#39;
+\end{align*}\]</span>
+Nous avons donc:
+<span class="math display">\[\begin{align*}
+ay&#39;&#39;+by&#39;+cy &amp;= F(x) \\
+a(\mu_1&#39;y_1&#39;+\mu_1y_1&#39;&#39;+\mu_2&#39;y_2&#39;+\mu_2y_2&#39;&#39;)+b(\mu_1y_1&#39;+\mu_2y_2&#39;)+c(\mu_1y_1+\mu_2y_2) &amp;= F(x) \\
+\mu_1\underbrace{(ay_1&#39;&#39;+by_1&#39;+cy_1)}_{=0}+\mu_2\underbrace{(ay_2&#39;&#39;+by_2&#39;+cy_2)}_{=0}+\mu_1&#39;y_1&#39;+\mu_2&#39;y_2&#39; &amp;= F(x) \\
+\mu_1&#39;y_1&#39;+\mu_2&#39;y_2&#39; &amp;= F(x)
+\end{align*}\]</span>
+Ainsi, pour déterminer <span class="math inline">\(\mu_1\)</span> et <span class="math inline">\(\mu_2\)</span>, nous avons les deux équations suivantes:
+<span class="math display">\[\begin{align*}
+\mu_1&#39;y_1+\mu_2&#39;y_2 &amp;= 0 \\
+\mu_1&#39;y_1&#39;+\mu_2&#39;y_2&#39; &amp;= F(x)
+\end{align*}\]</span>
+Nous pouvons utiliser la méthode de Cramer pour résoudre ce système d’équations linéaires:
+<span class="math display">\[\begin{align*}
+\mu_1&#39;&amp;= \dfrac{
+\begin{vmatrix}
+0&amp;y_2\\
+F(x)&amp;y_2&#39;
+\end{vmatrix}}{
+\begin{vmatrix}
+y_1 &amp;y_2\\
+y_1&#39;&amp;y_2&#39;
+\end{vmatrix}
+}=-\dfrac{y_2F(x)}{W(y_1,y_2)}\\
+\mu_2&#39;&amp;= \dfrac{
+\begin{vmatrix}
+y_1&amp;0\\
+y_1&#39;&amp;F(x)
+\end{vmatrix}}{
+\begin{vmatrix}
+y_1 &amp;y_2\\
+y_1&#39;&amp;y_2&#39;
+\end{vmatrix}
+}=\dfrac{y_1F(x)}{W(y_1,y_2)}
+\end{align*}\]</span></p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-87" class="definition"><strong>Définition 2.11  (Wronskien)  </strong></span>Nous appelons le <strong>Wronskien</strong> de deux fonctions <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span>, le résultat suivant:
+<span class="math display">\[\begin{align*}
+W(y_1,y_2)=\begin{vmatrix}
+y_1 &amp;y_2\\
+y_1&#39;&amp;y_2&#39;
+\end{vmatrix}
+\end{align*}\]</span></p>
 </div>
+
+
+<div class="remark">
+ <span class="remark"><em>Remarque. </em></span> Le <strong>Wronskien</strong> n’est jamais égal à zéro lorsque nous résolvons une équation différentielle car <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span> sont choisies pour être linéairement indépendantes.
+</div>
+
+<p>Nous pouvons maintenant trouver nos deux fonctions <span class="math inline">\(\mu_1\)</span> et <span class="math inline">\(\mu_2\)</span>:
+<span class="math display">\[\begin{align*}
+\mu_1&amp;=-\int \dfrac{y_2(x)F(x)}{W(y_1,y_2)}dx\\
+\mu_2&amp;=\int \dfrac{y_1(x)F(x)}{W(y_1,y_2)}dx
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div id="applications-des-equations-differentielles-du-deuxieme-ordre-a-coefficients-constants" class="section level2">
+<h2><span class="header-section-number">2.4</span> Applications des équations différentielles du deuxième ordre à coefficients constants</h2>
+</div>
+<div id="geogebra-edo" class="section level2">
+<h2><span class="header-section-number">2.5</span> GeoGebra</h2>
+
 </div>
 <div id="pages-supplementaires-1" class="section level2">
-<h2><span class="header-section-number">2.4</span> Pages supplémentaires</h2>
+<h2><span class="header-section-number">2.6</span> Pages supplémentaires</h2>
 <p>Des pages blanches supplémentaires pour ajouter, potentiellement, de nouveaux exemples et exercices.</p>
 <!-- Code pour insérer des pages blanches dans le document pdf pour des exemples supplémentaires. -->
 
