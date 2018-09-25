@@ -49,6 +49,71 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
@@ -413,9 +478,9 @@ Figure 2.1: Représentation d’un nombre complexe
 <div class="proof">
 <p> <span class="proof"><em>Preuve. </em></span> Pour démontrer ce résultat, nous utiliserons le théorème <a href="edo.html#thm:identite-euler">2.1</a>. Nous avons:
 <span class="math display" id="eq:emoins" id="eq:eplus">\[\begin{align}
-e^{i\theta} &amp;= \cos(\theta)+i\sin(\theta)  \tag{2.1} \\
-e^{-i\theta} &amp;= \cos(-\theta)+i\sin(-\theta) \notag\\
-&amp;= \cos(\theta)-i\sin(\theta)  \tag{2.2}
+e^{i\theta} &amp;= \cos(\theta)+i\sin(\theta)\tag{2.1} \\
+e^{-i\theta} &amp;= \cos(-\theta)+i\sin(-\theta) \notag \\
+&amp;= \cos(\theta)-i\sin(\theta)\tag{2.2}
 \end{align}\]</span></p>
 <p>Si nous additions les équations <a href="edo.html#eq:eplus">(2.1)</a> et <a href="edo.html#eq:emoins">(2.2)</a>:
 <span class="math display">\[\begin{align*}
@@ -488,10 +553,10 @@ y&#39;&#39; &amp;= r^2e^{rx}
 \end{align*}\]</span></p>
 <p>Nous substituons ces résultats dans l’équation <a href="edo.html#eq:homogene2">(2.3)</a>:
 <span class="math display" id="eq:quadratique">\[\begin{align}
-a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &amp;= 0 \notag\\
-ar^2e^{rx}+bre^{rx}+ce^{rx} &amp;= 0 \notag\\
-e^{rx}(ar^2+br+c) &amp;= 0 \notag\\
-ar^2+br+c &amp;= 0 \tag{2.4}
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &amp;= 0 \notag \\
+ar^2e^{rx}+bre^{rx}+ce^{rx} &amp;= 0 \notag \\
+e^{rx}(ar^2+br+c) &amp;= 0 \notag \\
+ar^2+br+c &amp;= 0\tag{2.4}
 \end{align}\]</span></p>
 <p>L’équation <a href="edo.html#eq:quadratique">(2.4)</a> se nomme polynôme caractéristique de l’équation <a href="edo.html#eq:homogene2">(2.3)</a>. Déterminer les valeurs de <span class="math inline">\(r\)</span> revient à trouver les racines du polynôme caractéristique et donc:
 <span class="math display">\[\begin{align*}
@@ -650,6 +715,11 @@ et <span class="math inline">\(y_p\)</span> est une solution particulière de l�
 <span id="exm:unnamed-chunk-86" class="example"><strong>Exemple 2.28  </strong></span>Trouvez la solution générale de l’équation différentielle <span class="math inline">\(y&#39;&#39;+y&#39;-6y=e^{4x}+\cos(3x)\)</span>.
 </div>
 
+
+<div class="example">
+<span id="exm:unnamed-chunk-87" class="example"><strong>Exemple 2.29  </strong></span>Trouvez la solution générale de l’équation différentielle <span class="math inline">\(y&#39;&#39;+2y&#39;+10y=\cos(2t)\)</span> avec les conditions intiales <span class="math inline">\(y(0)=-\frac{1}{2}\)</span> et <span class="math inline">\(y&#39;(0)=4\)</span>.
+</div>
+
 </div>
 <div id="la-methode-de-variation-des-parametres-ou-methode-de-lagrange" class="section level4">
 <h4><span class="header-section-number">2.3.3.2</span> La méthode de variation des paramètres (ou méthode de Lagrange)</h4>
@@ -711,7 +781,7 @@ y_1&#39;&amp;y_2&#39;
 \end{align*}\]</span></p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-87" class="definition"><strong>Définition 2.11  (Wronskien)  </strong></span>Nous appelons le <strong>Wronskien</strong> de deux fonctions <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span>, le résultat suivant:
+<p><span id="def:unnamed-chunk-88" class="definition"><strong>Définition 2.11  (Wronskien)  </strong></span>Nous appelons le <strong>Wronskien</strong> de deux fonctions <span class="math inline">\(y_1\)</span> et <span class="math inline">\(y_2\)</span>, le résultat suivant:
 <span class="math display">\[\begin{align*}
 W(y_1,y_2)=\begin{vmatrix}
 y_1 &amp;y_2\\
@@ -730,11 +800,62 @@ y_1&#39;&amp;y_2&#39;
 \mu_1&amp;=-\int \dfrac{y_2(x)F(x)}{W(y_1,y_2)}dx\\
 \mu_2&amp;=\int \dfrac{y_1(x)F(x)}{W(y_1,y_2)}dx
 \end{align*}\]</span></p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-90" class="example"><strong>Exemple 2.30  </strong></span>Trouvez la solution particulière de l’équation différentielle <span class="math inline">\(y&#39;&#39;+y=\csc(x)\)</span>.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-91" class="example"><strong>Exemple 2.31  </strong></span>Trouvez les solutions des équations différentielles suivantes en utilisant les deux méthodes:</p>
+<ul>
+<li>Méthode des coefficients indéterminés</li>
+<li>Méthode de variation des paramètres</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(y&#39;&#39;-2y&#39;+y=2x\)</span></li>
+<li><span class="math inline">\(y&#39;&#39;-y&#39;-6y=e^{-x}\)</span></li>
+</ol>
+</div>
+
 </div>
 </div>
 </div>
 <div id="applications-des-equations-differentielles-du-deuxieme-ordre-a-coefficients-constants" class="section level2">
 <h2><span class="header-section-number">2.4</span> Applications des équations différentielles du deuxième ordre à coefficients constants</h2>
+<p>Nous discuterons en particulier de l’oscillateur harmonique forcé.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-92" class="example"><strong>Exemple 2.32  (Oscillateur harmonique forcé)  </strong></span>Soit un ressort de constante <span class="math inline">\(k\)</span> auquel nous attachons une masse <span class="math inline">\(M\)</span>. Si le frottement est proportionnel à la vitesse de la masse et que celle-ci subit une force périodique, nous pouvons décrire le mouvement avec l’équation suivante:
+<span class="math display">\[\begin{align*}
+\dfrac{d^2x}{dt^2}+\dfrac{c}{M}\dfrac{dx}{dt}+\dfrac{k}{M}x &amp;= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}\]</span>
+Nous pouvons réécrire l’équation précédente en introduisant les variables <span class="math inline">\(b=\dfrac{c}{2M}\)</span> et <span class="math inline">\(a=\sqrt{\dfrac{k}{M}}\)</span>:
+<span class="math display">\[\begin{align*}
+\dfrac{d^2x}{dt^2}+2b\dfrac{dx}{dt}+a^2x &amp;= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}\]</span>
+Ce changement nous simplifiera le travail.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Trouvez la solution homogène de l’équation différentielle.</li>
+<li>Supposez que <span class="math inline">\(b=0\)</span>, c’est-à-dire qu’il n’y a pas de frottement. Trouvez la solution particulière dans le cas où <span class="math inline">\(a\neq \omega\)</span>. (Vous étudiez dans ce cas la situation des <strong>battements</strong>) Si vous êtes dans la version en ligne de ce document, vous pouvez écouter un battement en utilisant le lecteur ci-contre.
+<audio controls="controls"><source src="resources/sound/beat.wav" type="audio/wav" /></audio></li>
+<li>Supposez que <span class="math inline">\(b=0\)</span>, c’est-à-dire qu’il n’y a pas de frottement. Trouvez la solution particulière dans le cas où <span class="math inline">\(a =\omega\)</span>. (Vous étudiez dans ce cas la situation de <strong>résonnance</strong>) Pour voir en action le phénomène de résonnance, vous pouvez aller</li>
+</ol>
+</div>
+
+<pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_url</span>(<span class="st">&quot;https://youtu.be/j-zczJXSxnw&quot;</span>)</code></pre>
+<iframe src="https://youtu.be/j-zczJXSxnw" width="672" height="400px">
+</iframe>
+<p>Soit un ressort de constante <span class="math inline">\(k\)</span> auquel nous attachons une masse <span class="math inline">\(M\)</span>. Si le frottement est proportionnel à la vitesse de la masse et que celle-ci subit une force périodique, nous pouvons décrire le mouvement avec l’équation suivante:
+<span class="math display">\[\begin{align*}
+\dfrac{d^2x}{dt^2}+\dfrac{c}{M}\dfrac{dx}{dt}+\dfrac{k}{M}x &amp;= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}\]</span>
+Nous pouvons réécrire l’équation précédente en introduisant les variables <span class="math inline">\(b=\dfrac{c}{2M}\)</span> et <span class="math inline">\(a=\sqrt{\dfrac{k}{M}}\)</span>:
+<span class="math display">\[\begin{align*}
+\dfrac{d^2x}{dt^2}+2b\dfrac{dx}{dt}+a^2x &amp;= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}\]</span>
+Ce changement nous simplifiera le travail.</p>
+<p>Débutons par trouver la solution de l’équation</p>
 </div>
 <div id="geogebra-edo" class="section level2">
 <h2><span class="header-section-number">2.5</span> GeoGebra</h2>

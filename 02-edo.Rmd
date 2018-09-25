@@ -279,9 +279,9 @@ Nous avons:
 ```{proof}
 Pour démontrer ce résultat, nous utiliserons le théorème \@ref(thm:identite-euler). Nous avons:
 \begin{align}
-e^{i\theta} &= \cos(\theta)+i\sin(\theta)  (\#eq:eplus) \\
-e^{-i\theta} &= \cos(-\theta)+i\sin(-\theta) \notag\\
-&= \cos(\theta)-i\sin(\theta)  (\#eq:emoins)
+e^{i\theta} &= \cos(\theta)+i\sin(\theta)(\#eq:eplus) \\
+e^{-i\theta} &= \cos(-\theta)+i\sin(-\theta) \notag \\
+&= \cos(\theta)-i\sin(\theta)(\#eq:emoins)
 \end{align}
 
 Si nous additions les équations \@ref(eq:eplus) et \@ref(eq:emoins):
@@ -354,10 +354,10 @@ y'' &= r^2e^{rx}
 
 Nous substituons ces résultats dans l'équation \@ref(eq:homogene2):
 \begin{align}
-a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0 \notag\\
-ar^2e^{rx}+bre^{rx}+ce^{rx} &= 0 \notag\\
-e^{rx}(ar^2+br+c) &= 0 \notag\\
-ar^2+br+c &= 0 (\#eq:quadratique)
+a\dfrac{d^2y}{dx^2}+b\dfrac{dy}{dx}+cy &= 0 \notag \\
+ar^2e^{rx}+bre^{rx}+ce^{rx} &= 0 \notag \\
+e^{rx}(ar^2+br+c) &= 0 \notag \\
+ar^2+br+c &= 0(\#eq:quadratique)
 \end{align}
 
 L'équation \@ref(eq:quadratique) se nomme polynôme caractéristique de l'équation \@ref(eq:homogene2). Déterminer les valeurs de $r$ revient à trouver les racines du polynôme caractéristique et donc:
@@ -502,6 +502,11 @@ Trouvez la solution générale de l'équation différentielle $y''+y'-6y=e^{4x}+
 ```
 \vspace*{10cm}
 
+```{example}
+Trouvez la solution générale de l'équation différentielle $y''+2y'+10y=\cos(2t)$ avec les conditions intiales $y(0)=-\frac{1}{2}$ et $y'(0)=4$.
+```
+\vspace*{15cm}
+
 
 #### La méthode de variation des paramètres (ou méthode de Lagrange)
 
@@ -585,7 +590,63 @@ Nous pouvons maintenant trouver nos deux fonctions $\mu_1$ et $\mu_2$:
 \mu_2&=\int \dfrac{y_1(x)F(x)}{W(y_1,y_2)}dx
 \end{align*}
 
+```{example}
+Trouvez la solution particulière de l'équation différentielle $y''+y=\csc(x)$.
+```
+\vspace*{10cm}
+
+```{example}
+Trouvez les solutions des équations différentielles suivantes en utilisant les deux méthodes:
+
+  - Méthode des coefficients indéterminés
+  - Méthode de variation des paramètres
+
+  a. $y''-2y'+y=2x$
+  a. $y''-y'-6y=e^{-x}$
+  
+  
+```
+
 ## Applications des équations différentielles du deuxième ordre à coefficients constants
+
+Nous discuterons en particulier de l'oscillateur harmonique forcé. 
+
+```{example, name="Oscillateur harmonique forcé"}
+Soit un ressort de constante $k$ auquel nous attachons une masse $M$. Si le frottement est proportionnel à la vitesse de la masse et que celle-ci subit une force périodique, nous pouvons décrire le mouvement avec l'équation suivante:
+\begin{align*}
+\dfrac{d^2x}{dt^2}+\dfrac{c}{M}\dfrac{dx}{dt}+\dfrac{k}{M}x &= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}
+Nous pouvons réécrire l'équation précédente en introduisant les variables $b=\dfrac{c}{2M}$ et $a=\sqrt{\dfrac{k}{M}}$:
+\begin{align*}
+\dfrac{d^2x}{dt^2}+2b\dfrac{dx}{dt}+a^2x &= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}
+Ce changement nous simplifiera le travail.
+
+  a. Trouvez la solution homogène de l'équation différentielle.
+  a. Supposez que $b=0$, c'est-à-dire qu'il n'y a pas de frottement. Trouvez la solution particulière dans le cas où $a\neq \omega$. (Vous étudiez dans ce cas la situation des __battements__) Si vous êtes dans la version en ligne de ce document, vous pouvez écouter un battement en utilisant le lecteur ci-contre.
+  <audio controls="controls"><source src="resources/sound/beat.wav" type="audio/wav" /></audio>
+  a. Supposez que $b=0$, c'est-à-dire qu'il n'y a pas de frottement. Trouvez la solution particulière dans le cas où $a =\omega$. (Vous étudiez dans ce cas la situation de __résonnance__) Pour voir en action le phénomène de résonnance, vous pouvez aller 
+
+```
+
+```{r}
+knitr::include_url("https://youtu.be/j-zczJXSxnw")
+```
+
+
+
+Soit un ressort de constante $k$ auquel nous attachons une masse $M$. Si le frottement est proportionnel à la vitesse de la masse et que celle-ci subit une force périodique, nous pouvons décrire le mouvement avec l'équation suivante:
+\begin{align*}
+\dfrac{d^2x}{dt^2}+\dfrac{c}{M}\dfrac{dx}{dt}+\dfrac{k}{M}x &= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}
+Nous pouvons réécrire l'équation précédente en introduisant les variables $b=\dfrac{c}{2M}$ et $a=\sqrt{\dfrac{k}{M}}$:
+\begin{align*}
+\dfrac{d^2x}{dt^2}+2b\dfrac{dx}{dt}+a^2x &= \dfrac{F_0}{M}\cos(\omega t)
+\end{align*}
+Ce changement nous simplifiera le travail.
+
+Débutons par trouver la solution de l'équation
+
 
 ## GeoGebra {#geogebra-edo}
 
