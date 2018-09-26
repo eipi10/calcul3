@@ -1,5 +1,9 @@
 # Les équations différentielles ordinaires {#edo}
 
+Vous trouverez à la section \@ref(geogebra-edo) une application [GeoGebra](https://www.geogebra.org/?lang=fr) vous permettant de visualiser les solutions d'une équation différentielle homogène d'ordre 2 à coefficients constants. À noter que cette application n'est disponible que dans la version en ligne de ce document.
+
+## Introduction
+
 Les équations différentielles sont à la base de la modélisation de divers phénomènes physiques, statistiques, chimiques, biologiques ou économiques, par exemple. Nous n'étudierons pas en détail comment obtenir ces équations différentielles mais nous verrons comment résoudre trois types d'équations différentielles différents.
 
 Nous étudierons les types suivants:
@@ -623,33 +627,30 @@ Nous pouvons réécrire l'équation précédente en introduisant les variables $
 Ce changement nous simplifiera le travail.
 
   a. Trouvez la solution homogène de l'équation différentielle.
-  a. Supposez que $b=0$, c'est-à-dire qu'il n'y a pas de frottement. Trouvez la solution particulière dans le cas où $a\neq \omega$. (Vous étudiez dans ce cas la situation des __battements__) Si vous êtes dans la version en ligne de ce document, vous pouvez écouter un battement en utilisant le lecteur ci-contre.
-  <audio controls="controls"><source src="resources/sound/beat.wav" type="audio/wav" /></audio>
-  a. Supposez que $b=0$, c'est-à-dire qu'il n'y a pas de frottement. Trouvez la solution particulière dans le cas où $a =\omega$. (Vous étudiez dans ce cas la situation de __résonnance__) Pour voir en action le phénomène de résonnance, vous pouvez aller 
+  a. Supposez que $b=0$, c'est-à-dire qu'il n'y a pas de frottement. Trouvez la solution particulière dans le cas où $a\neq \omega$. (Vous étudiez dans ce cas la situation des __battements__). Pour en savoir plus sur le phénomène de [battements](https://fr.wikipedia.org/wiki/Battement_(physique)).
+  a. Supposez que $b=0$, c'est-à-dire qu'il n'y a pas de frottement. Trouvez la solution particulière dans le cas où $a =\omega$. (Vous étudiez dans ce cas la situation de __résonnance__) Pour voir en action le phénomène de résonnance, [Tacoma Narrows Bridge](https://www.youtube.com/watch?v=j-zczJXSxnw) .
 
 ```
-
-```{r}
-knitr::include_url("https://youtu.be/j-zczJXSxnw")
-```
-
-
-
-Soit un ressort de constante $k$ auquel nous attachons une masse $M$. Si le frottement est proportionnel à la vitesse de la masse et que celle-ci subit une force périodique, nous pouvons décrire le mouvement avec l'équation suivante:
-\begin{align*}
-\dfrac{d^2x}{dt^2}+\dfrac{c}{M}\dfrac{dx}{dt}+\dfrac{k}{M}x &= \dfrac{F_0}{M}\cos(\omega t)
-\end{align*}
-Nous pouvons réécrire l'équation précédente en introduisant les variables $b=\dfrac{c}{2M}$ et $a=\sqrt{\dfrac{k}{M}}$:
-\begin{align*}
-\dfrac{d^2x}{dt^2}+2b\dfrac{dx}{dt}+a^2x &= \dfrac{F_0}{M}\cos(\omega t)
-\end{align*}
-Ce changement nous simplifiera le travail.
-
-Débutons par trouver la solution de l'équation
-
 
 ## GeoGebra {#geogebra-edo}
 
+<script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+<script type="text/javascript">
+var parameters = {
+"appName":"graphing",
+"material_id":"vcv92e6s",
+"width":800,
+"height":600,
+"showToolBar":true,
+"borderColor":null,
+"showMenuBar":true,
+"showFullscreenButton":true,
+"enableShiftDragZoom":true};
+
+var applet = new GGBApplet(parameters, 'applet_container');
+window.onload = function() { applet.inject('applet_container'); updateHelp('AG');}
+</script>
+<div id="applet_container"></div>
 
 \newpage
 ## Pages supplémentaires
