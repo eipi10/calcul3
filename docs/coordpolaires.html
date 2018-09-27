@@ -25,7 +25,7 @@
 <meta name="author" content="Marc-André Désautels">
 
 
-<meta name="date" content="2018-09-26">
+<meta name="date" content="2018-09-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,6 +47,13 @@
 
 
 
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.8.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
 
 
 
@@ -109,7 +116,12 @@
 <li class="chapter" data-level="3.5" data-path="coordpolaires.html"><a href="coordpolaires.html#longueur-dune-courbe"><i class="fa fa-check"></i><b>3.5</b> Longueur d’une courbe</a></li>
 <li class="chapter" data-level="3.6" data-path="coordpolaires.html"><a href="coordpolaires.html#geogebra-polaire"><i class="fa fa-check"></i><b>3.6</b> GeoGebra</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="fctvar.html"><a href="fctvar.html"><i class="fa fa-check"></i><b>4</b> Les fonctions de plusieurs variables</a></li>
+<li class="chapter" data-level="4" data-path="fctvar.html"><a href="fctvar.html"><i class="fa fa-check"></i><b>4</b> Les fonctions de plusieurs variables</a><ul>
+<li class="chapter" data-level="4.1" data-path="fctvar.html"><a href="fctvar.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="fctvar.html"><a href="fctvar.html#definitions"><i class="fa fa-check"></i><b>4.2</b> Définitions</a></li>
+<li class="chapter" data-level="4.3" data-path="fctvar.html"><a href="fctvar.html#graphique"><i class="fa fa-check"></i><b>4.3</b> Graphique</a></li>
+<li class="chapter" data-level="4.4" data-path="fctvar.html"><a href="fctvar.html#domaine"><i class="fa fa-check"></i><b>4.4</b> Domaine</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="intfct.html"><a href="intfct.html"><i class="fa fa-check"></i><b>5</b> L’intégration de fonctions de plusieurs variables</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publié avec bookdown</a></li>
@@ -242,7 +254,7 @@ Figure 3.2: Grille polaire
 <p>Nous voulons maintenant déterminer les tangentes à des courbes polaires. Nous savons que <span class="math inline">\(x=r\cos(\theta)\)</span> et que <span class="math inline">\(y=r\sin(\theta)\)</span>. Si <span class="math inline">\(r=f(\theta)\)</span> alors nous avons que <span class="math inline">\(x=x(\theta)\)</span> et <span class="math inline">\(y=y(\theta)\)</span>, c’est-à-dire que <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> sont des fonctions de <span class="math inline">\(\theta\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-104" class="theorem"><strong>Théorème 3.1  (Tangentes à une courbe polaire)  </strong></span>Soit <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> deux fonctions de <span class="math inline">\(\theta\)</span>. Si <span class="math inline">\(r=f(\theta)\)</span>, nous avons:
+<p><span id="thm:tangente-polaire" class="theorem"><strong>Théorème 3.1  (Tangentes à une courbe polaire)  </strong></span>Soit <span class="math inline">\(x\)</span> et <span class="math inline">\(y\)</span> deux fonctions de <span class="math inline">\(\theta\)</span>. Si <span class="math inline">\(r=f(\theta)\)</span>, nous avons:
 <span class="math display">\[\begin{align*}
 \dfrac{dy}{dx} &amp;= \dfrac{f&#39;(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f&#39;(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
 \end{align*}\]</span></p>
@@ -260,19 +272,19 @@ Figure 3.2: Grille polaire
 Ainsi,
 <span class="math display">\[\begin{align*}
 \dfrac{dy}{dx} &amp;= \dfrac{\dfrac{dy}{d\theta}}{\dfrac{dx}{d\theta}} \\
-\dfrac{f&#39;(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f&#39;(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
+&amp;= \dfrac{f&#39;(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f&#39;(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
 \end{align*}\]</span></p>
 </div>
 
 <p>Nous avons maintenant une formule pour déterminer la pente de la droite tangente.</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-106" class="example"><strong>Exemple 3.8  </strong></span>Trouvez l’équation de la droite tangente en <span class="math inline">\(\theta=\frac{\pi}{2}\)</span> de <span class="math inline">\(r=1+\sin(2\theta)\)</span>.
+<span id="exm:unnamed-chunk-105" class="example"><strong>Exemple 3.8  </strong></span>Trouvez l’équation de la droite tangente en <span class="math inline">\(\theta=\frac{\pi}{2}\)</span> de <span class="math inline">\(r=1+\sin(2\theta)\)</span>.
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-107" class="example"><strong>Exemple 3.9  </strong></span>Soit l’équation <span class="math inline">\(r=2\cos(\theta)\)</span>.</p>
+<p><span id="exm:unnamed-chunk-106" class="example"><strong>Exemple 3.9  </strong></span>Soit l’équation <span class="math inline">\(r=2\cos(\theta)\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Trouvez la dérivée <span class="math inline">\(\dfrac{dy}{dx}\)</span>.</li>
 <li>Évaluez <span class="math inline">\(\left.\dfrac{dy}{dx}\right|_{\theta=\frac{\pi}{4}}\)</span>.</li>
@@ -282,7 +294,7 @@ Ainsi,
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-108" class="example"><strong>Exemple 3.10  </strong></span>Trouvez la dérivée de la rose de Ghandi, <span class="math inline">\(r=\cos\left(\dfrac{3\theta}{2}\right)\)</span>.
+<span id="exm:unnamed-chunk-107" class="example"><strong>Exemple 3.10  </strong></span>Trouvez la dérivée de la rose de Ghandi, <span class="math inline">\(r=\cos\left(\dfrac{3\theta}{2}\right)\)</span>.
 </div>
 
 </div>
@@ -326,26 +338,26 @@ A &amp;= \int_{\theta_a}^{\theta_b}\dfrac{1}{2}[f(\theta)]^2 d\theta
 \end{align*}\]</span></p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-109" class="example"><strong>Exemple 3.11  </strong></span>Calculez l’aire de la région formée par <span class="math inline">\(r=1+\sin(2\theta)\)</span>.
+<span id="exm:unnamed-chunk-108" class="example"><strong>Exemple 3.11  </strong></span>Calculez l’aire de la région formée par <span class="math inline">\(r=1+\sin(2\theta)\)</span>.
 </div>
 
 <p><img src="resources/images/latex/ex1airepolaire.png" width="50%" style="display: block; margin: auto;" />
 </p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-110" class="example"><strong>Exemple 3.12  </strong></span>Calculez l’aire située au-dessus du cercle <span class="math inline">\(r=3\sin(\theta)\)</span> et en dessous de la cardioïde <span class="math inline">\(r=1+\sin(\theta)\)</span>.
+<span id="exm:unnamed-chunk-109" class="example"><strong>Exemple 3.12  </strong></span>Calculez l’aire située au-dessus du cercle <span class="math inline">\(r=3\sin(\theta)\)</span> et en dessous de la cardioïde <span class="math inline">\(r=1+\sin(\theta)\)</span>.
 </div>
 
 <p><img src="resources/images/latex/ex2airepolaire.png" width="50%" style="display: block; margin: auto;" />
 </p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-111" class="example"><strong>Exemple 3.13  </strong></span>Calculez l’aire d’une seule feuille de <span class="math inline">\(r=1+\sin(\theta)\)</span> avec <span class="math inline">\(0\leq \theta \leq \frac{\pi}{3}\)</span>.
+<span id="exm:unnamed-chunk-110" class="example"><strong>Exemple 3.13  </strong></span>Calculez l’aire d’une seule feuille de <span class="math inline">\(r=1+\sin(\theta)\)</span> avec <span class="math inline">\(0\leq \theta \leq \frac{\pi}{3}\)</span>.
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-112" class="example"><strong>Exemple 3.14  </strong></span>Calculez l’aire du quadrifolium <span class="math inline">\(r=\cos(2\theta)\)</span> si un seul pétale se trouve dans l’intervalle <span class="math inline">\(\frac{\pi}{4}\leq \theta \leq \frac{3\pi}{4}\)</span>.
+<span id="exm:unnamed-chunk-111" class="example"><strong>Exemple 3.14  </strong></span>Calculez l’aire du quadrifolium <span class="math inline">\(r=\cos(2\theta)\)</span> si un seul pétale se trouve dans l’intervalle <span class="math inline">\(\frac{\pi}{4}\leq \theta \leq \frac{3\pi}{4}\)</span>.
 </div>
 
 </div>
@@ -353,7 +365,7 @@ A &amp;= \int_{\theta_a}^{\theta_b}\dfrac{1}{2}[f(\theta)]^2 d\theta
 <h2><span class="header-section-number">3.5</span> Longueur d’une courbe</h2>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-113" class="theorem"><strong>Théorème 3.2  (Logueur d’une courbe en coordonnées polaires)  </strong></span>La longueur d’une courbe en coordonnées polaires définie par <span class="math inline">\(r=f(\theta)\)</span> où <span class="math inline">\(\theta_a\leq\theta\leq\theta_b\)</span> est donnée par:
+<p><span id="thm:unnamed-chunk-112" class="theorem"><strong>Théorème 3.2  (Longueur d’une courbe en coordonnées polaires)  </strong></span>La longueur d’une courbe en coordonnées polaires définie par <span class="math inline">\(r=f(\theta)\)</span> où <span class="math inline">\(\theta_a\leq\theta\leq\theta_b\)</span> est donnée par:
 <span class="math display">\[\begin{align*}
 L=\int_{\theta_a}^{\theta_b}\sqrt{\left(\dfrac{dr}{d\theta}\right)^2+r^2}d\theta
 \end{align*}\]</span></p>
@@ -367,11 +379,38 @@ L=\int_{\theta_a}^{\theta_b}\sqrt{\left(\dfrac{dr}{d\theta}\right)^2+r^2}d\theta
 L &amp;= \int_a^b \sqrt{1+\left(\dfrac{dy}{dx}\right)^2}dx \\
 &amp;= \int_a^b \sqrt{(dx)^2\left(1+\left(\dfrac{dy}{dx}\right)^2\right)} \\
 &amp;= \int_a^b \sqrt{(dx)^2+(dy)^2} \\
-&amp;= 
+&amp;= \int_a^b \sqrt{\left(\dfrac{dx}{d\theta}d\theta\right)^2+\left(\dfrac{dy}{d\theta}d\theta\right)^2} \\
+&amp;= \int_a^b \sqrt{\left(\dfrac{dx}{d\theta}\right)^2+\left(\dfrac{dy}{d\theta}\right)^2}d\theta
+\end{align*}\]</span>
+Nous savons par le théorème <a href="coordpolaires.html#thm:tangente-polaire">3.1</a> ce que sont <span class="math inline">\(\dfrac{dx}{d\theta}\)</span> et <span class="math inline">\(\dfrac{dy}{d\theta}\)</span>. Ainsi:
+<span class="math display">\[\begin{align*}
+L &amp;= \int_a^b \sqrt{\left(\dfrac{dr}{d\theta}\cos(\theta)-r\sin(\theta)\right)^2+\left(\dfrac{dr}{d\theta}\sin(\theta)+r\cos(\theta)\right)^2}d\theta \\
+&amp;= \ldots \\
+&amp;= \int_{\theta_a}^{\theta_b}\sqrt{\left(\dfrac{dr}{d\theta}\right)^2+r^2}d\theta 
 \end{align*}\]</span></p>
 </div>
 
-<p>La longueur d’une courbe en coordonnées polaires définie par <span class="math inline">\(r=f(\theta)\)</span></p>
+<p>Voici quelques exemple de longueurs d’arc.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-114" class="example"><strong>Exemple 3.15  </strong></span>Calculez la longueur d’arc de <span class="math inline">\(r=e^{2\theta}\)</span> avec <span class="math inline">\(\theta\in[0,2\pi]\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-115" class="example"><strong>Exemple 3.16  </strong></span>Calculez la longueur d’arc de <span class="math inline">\(r=2-2\cos(\theta)\)</span> avec <span class="math inline">\(\theta\in[0,2\pi]\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-116" class="example"><strong>Exemple 3.17  </strong></span>Calculez la longueur d’arc de <span class="math inline">\(r=ae^{-b\theta}\)</span> avec <span class="math inline">\(\theta\in[0,\infty[\)</span> et <span class="math inline">\(b&gt;0\)</span>.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-117" class="example"><strong>Exemple 3.18  </strong></span>Calculez la longueur d’arc de <span class="math inline">\(r=a(1-\sin(\theta))\)</span> avec <span class="math inline">\(\theta\in[0,2\pi]\)</span>.
+</div>
+
 </div>
 <div id="geogebra-polaire" class="section level2">
 <h2><span class="header-section-number">3.6</span> GeoGebra</h2>
@@ -379,8 +418,8 @@ L &amp;= \int_a^b \sqrt{1+\left(\dfrac{dy}{dx}\right)^2}dx \\
 <script type="text/javascript">
 var parameters = {
 "appName":"graphing",
-"material_id":"fqkm2q4m",
-"width":800,
+"material_id":"khn4c2md",
+"width":1000,
 "height":600,
 "showToolBar":true,
 "borderColor":null,

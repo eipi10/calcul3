@@ -115,7 +115,7 @@ knitr::include_graphics("resources/images/latex/ex2courbepolaire.png")
 
 Nous voulons maintenant déterminer les tangentes à des courbes polaires. Nous savons que $x=r\cos(\theta)$ et que $y=r\sin(\theta)$. Si $r=f(\theta)$ alors nous avons que $x=x(\theta)$ et $y=y(\theta)$, c'est-à-dire que $x$ et $y$ sont des fonctions de $\theta$.
 
-```{theorem,name="Tangentes à une courbe polaire"}
+```{theorem,name="Tangentes à une courbe polaire",label="tangente-polaire"}
 Soit $x$ et $y$ deux fonctions de $\theta$. Si $r=f(\theta)$, nous avons:
 \begin{align*}
 \dfrac{dy}{dx} &= \dfrac{f'(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f'(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
@@ -133,7 +133,7 @@ Trouvons $\dfrac{dx}{d\theta}$ et $\dfrac{dy}{d\theta}$.
 Ainsi,
 \begin{align*}
 \dfrac{dy}{dx} &= \dfrac{\dfrac{dy}{d\theta}}{\dfrac{dx}{d\theta}} \\
-\dfrac{f'(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f'(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
+&= \dfrac{f'(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f'(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
 \end{align*}
 
 ```
@@ -230,7 +230,7 @@ Calculez l'aire du quadrifolium $r=\cos(2\theta)$ si un seul pétale se trouve d
 
 ## Longueur d'une courbe
 
-```{theorem,name="Logueur d'une courbe en coordonnées polaires"}
+```{theorem,name="Longueur d'une courbe en coordonnées polaires"}
 La longueur d'une courbe en coordonnées polaires  définie par $r=f(\theta)$ où $\theta_a\leq\theta\leq\theta_b$ est donnée par:
 \begin{align*}
 L=\int_{\theta_a}^{\theta_b}\sqrt{\left(\dfrac{dr}{d\theta}\right)^2+r^2}d\theta
@@ -245,14 +245,40 @@ Nous savons que:
 L &= \int_a^b \sqrt{1+\left(\dfrac{dy}{dx}\right)^2}dx \\
 &= \int_a^b \sqrt{(dx)^2\left(1+\left(\dfrac{dy}{dx}\right)^2\right)} \\
 &= \int_a^b \sqrt{(dx)^2+(dy)^2} \\
-&= 
+&= \int_a^b \sqrt{\left(\dfrac{dx}{d\theta}d\theta\right)^2+\left(\dfrac{dy}{d\theta}d\theta\right)^2} \\
+&= \int_a^b \sqrt{\left(\dfrac{dx}{d\theta}\right)^2+\left(\dfrac{dy}{d\theta}\right)^2}d\theta
+\end{align*}
+Nous savons par le théorème \@ref(thm:tangente-polaire) ce que sont $\dfrac{dx}{d\theta}$ et $\dfrac{dy}{d\theta}$. Ainsi:
+\begin{align*}
+L &= \int_a^b \sqrt{\left(\dfrac{dr}{d\theta}\cos(\theta)-r\sin(\theta)\right)^2+\left(\dfrac{dr}{d\theta}\sin(\theta)+r\cos(\theta)\right)^2}d\theta \\
+&= \ldots \\
+&= \int_{\theta_a}^{\theta_b}\sqrt{\left(\dfrac{dr}{d\theta}\right)^2+r^2}d\theta 
 \end{align*}
 
 ```
 
+Voici quelques exemple de longueurs d'arc.
 
+```{example}
+Calculez la longueur d'arc de $r=e^{2\theta}$ avec $\theta\in[0,2\pi]$.
+```
+\vspace*{8cm}
 
-La longueur d'une courbe en coordonnées polaires définie par $r=f(\theta)$
+```{example}
+Calculez la longueur d'arc de $r=2-2\cos(\theta)$ avec $\theta\in[0,2\pi]$.
+```
+\vspace*{8cm}
+
+```{example}
+Calculez la longueur d'arc de $r=ae^{-b\theta}$ avec $\theta\in[0,\infty[$ et $b>0$.
+```
+\vspace*{10cm}
+
+```{example}
+Calculez la longueur d'arc de $r=a(1-\sin(\theta))$ avec $\theta\in[0,2\pi]$.
+```
+\vspace*{8cm}
+
 
 ## GeoGebra {#geogebra-polaire}
 
@@ -260,8 +286,8 @@ La longueur d'une courbe en coordonnées polaires définie par $r=f(\theta)$
 <script type="text/javascript">
 var parameters = {
 "appName":"graphing",
-"material_id":"fqkm2q4m",
-"width":800,
+"material_id":"khn4c2md",
+"width":1000,
 "height":600,
 "showToolBar":true,
 "borderColor":null,

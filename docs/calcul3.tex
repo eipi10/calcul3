@@ -85,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-09-26}
+    \date{2018-09-27}
 
 \usepackage{booktabs}
 \usepackage{tcolorbox}
@@ -1873,7 +1873,7 @@ Nous savons que \(x=r\cos(\theta)\) et que \(y=r\sin(\theta)\). Si
 c'est-à-dire que \(x\) et \(y\) sont des fonctions de \(\theta\).
 
 \BeginKnitrBlock{theorem}[Tangentes à une courbe polaire]
-\protect\hypertarget{thm:unnamed-chunk-104}{}{\label{thm:unnamed-chunk-104}
+\protect\hypertarget{thm:tangente-polaire}{}{\label{thm:tangente-polaire}
 \iffalse (Tangentes à une courbe polaire) \fi{} }Soit \(x\) et \(y\)
 deux fonctions de \(\theta\). Si \(r=f(\theta)\), nous avons:
 \begin{align*}
@@ -1890,7 +1890,7 @@ deux fonctions de \(\theta\). Si \(r=f(\theta)\), nous avons:
 &=  f'(\theta)\sin(\theta)+f(\theta)\cos(\theta) 
 \end{align*} Ainsi, \begin{align*}
 \dfrac{dy}{dx} &= \dfrac{\dfrac{dy}{d\theta}}{\dfrac{dx}{d\theta}} \\
-\dfrac{f'(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f'(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
+&= \dfrac{f'(\theta)\sin(\theta)+f(\theta)\cos(\theta)}{f'(\theta)\cos(\theta)-f(\theta)\sin(\theta)}
 \end{align*}
 \EndKnitrBlock{proof}
 
@@ -1898,14 +1898,14 @@ Nous avons maintenant une formule pour déterminer la pente de la droite
 tangente.
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-106}{}{\label{exm:unnamed-chunk-106}
+\protect\hypertarget{exm:unnamed-chunk-105}{}{\label{exm:unnamed-chunk-105}
 }Trouvez l'équation de la droite tangente en \(\theta=\frac{\pi}{2}\) de
 \(r=1+\sin(2\theta)\).
 \EndKnitrBlock{example}
 \vspace*{8cm}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-107}{}{\label{exm:unnamed-chunk-107}
+\protect\hypertarget{exm:unnamed-chunk-106}{}{\label{exm:unnamed-chunk-106}
 }Soit l'équation \(r=2\cos(\theta)\).
 
 \begin{enumerate}
@@ -1922,7 +1922,7 @@ tangente.
 \vspace*{10cm}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-108}{}{\label{exm:unnamed-chunk-108}
+\protect\hypertarget{exm:unnamed-chunk-107}{}{\label{exm:unnamed-chunk-107}
 }Trouvez la dérivée de la rose de Ghandi,
 \(r=\cos\left(\dfrac{3\theta}{2}\right)\).
 \EndKnitrBlock{example}
@@ -1985,7 +1985,7 @@ A &= \int_{\theta_a}^{\theta_b}\dfrac{1}{2}[f(\theta)]^2 d\theta
 \end{align*}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-109}{}{\label{exm:unnamed-chunk-109}
+\protect\hypertarget{exm:unnamed-chunk-108}{}{\label{exm:unnamed-chunk-108}
 }Calculez l'aire de la région formée par \(r=1+\sin(2\theta)\).
 \EndKnitrBlock{example}
 
@@ -1993,7 +1993,7 @@ A &= \int_{\theta_a}^{\theta_b}\dfrac{1}{2}[f(\theta)]^2 d\theta
 \vspace*{10cm}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-110}{}{\label{exm:unnamed-chunk-110}
+\protect\hypertarget{exm:unnamed-chunk-109}{}{\label{exm:unnamed-chunk-109}
 }Calculez l'aire située au-dessus du cercle \(r=3\sin(\theta)\) et en
 dessous de la cardioïde \(r=1+\sin(\theta)\).
 \EndKnitrBlock{example}
@@ -2002,14 +2002,14 @@ dessous de la cardioïde \(r=1+\sin(\theta)\).
 \vspace*{10cm}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-111}{}{\label{exm:unnamed-chunk-111}
+\protect\hypertarget{exm:unnamed-chunk-110}{}{\label{exm:unnamed-chunk-110}
 }Calculez l'aire d'une seule feuille de \(r=1+\sin(\theta)\) avec
 \(0\leq \theta \leq \frac{\pi}{3}\).
 \EndKnitrBlock{example}
 \vspace*{10cm}
 
 \BeginKnitrBlock{example}
-\protect\hypertarget{exm:unnamed-chunk-112}{}{\label{exm:unnamed-chunk-112}
+\protect\hypertarget{exm:unnamed-chunk-111}{}{\label{exm:unnamed-chunk-111}
 }Calculez l'aire du quadrifolium \(r=\cos(2\theta)\) si un seul pétale
 se trouve dans l'intervalle
 \(\frac{\pi}{4}\leq \theta \leq \frac{3\pi}{4}\).
@@ -2019,9 +2019,9 @@ se trouve dans l'intervalle
 \hypertarget{longueur-dune-courbe}{%
 \section{Longueur d'une courbe}\label{longueur-dune-courbe}}
 
-\BeginKnitrBlock{theorem}[Logueur d'une courbe en coordonnées polaires]
-\protect\hypertarget{thm:unnamed-chunk-113}{}{\label{thm:unnamed-chunk-113}
-\iffalse (Logueur d'une courbe en coordonnées polaires) \fi{} }La
+\BeginKnitrBlock{theorem}[Longueur d'une courbe en coordonnées polaires]
+\protect\hypertarget{thm:unnamed-chunk-112}{}{\label{thm:unnamed-chunk-112}
+\iffalse (Longueur d'une courbe en coordonnées polaires) \fi{} }La
 longueur d'une courbe en coordonnées polaires définie par
 \(r=f(\theta)\) où \(\theta_a\leq\theta\leq\theta_b\) est donnée par:
 \begin{align*}
@@ -2037,12 +2037,46 @@ Nous savons que: \begin{align*}
 L &= \int_a^b \sqrt{1+\left(\dfrac{dy}{dx}\right)^2}dx \\
 &= \int_a^b \sqrt{(dx)^2\left(1+\left(\dfrac{dy}{dx}\right)^2\right)} \\
 &= \int_a^b \sqrt{(dx)^2+(dy)^2} \\
-&= 
+&= \int_a^b \sqrt{\left(\dfrac{dx}{d\theta}d\theta\right)^2+\left(\dfrac{dy}{d\theta}d\theta\right)^2} \\
+&= \int_a^b \sqrt{\left(\dfrac{dx}{d\theta}\right)^2+\left(\dfrac{dy}{d\theta}\right)^2}d\theta
+\end{align*} Nous savons par le théorème \ref{thm:tangente-polaire} ce
+que sont \(\dfrac{dx}{d\theta}\) et \(\dfrac{dy}{d\theta}\). Ainsi:
+\begin{align*}
+L &= \int_a^b \sqrt{\left(\dfrac{dr}{d\theta}\cos(\theta)-r\sin(\theta)\right)^2+\left(\dfrac{dr}{d\theta}\sin(\theta)+r\cos(\theta)\right)^2}d\theta \\
+&= \ldots \\
+&= \int_{\theta_a}^{\theta_b}\sqrt{\left(\dfrac{dr}{d\theta}\right)^2+r^2}d\theta 
 \end{align*}
 \EndKnitrBlock{proof}
 
-La longueur d'une courbe en coordonnées polaires définie par
-\(r=f(\theta)\)
+Voici quelques exemple de longueurs d'arc.
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-114}{}{\label{exm:unnamed-chunk-114}
+}Calculez la longueur d'arc de \(r=e^{2\theta}\) avec
+\(\theta\in[0,2\pi]\).
+\EndKnitrBlock{example}
+\vspace*{8cm}
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-115}{}{\label{exm:unnamed-chunk-115}
+}Calculez la longueur d'arc de \(r=2-2\cos(\theta)\) avec
+\(\theta\in[0,2\pi]\).
+\EndKnitrBlock{example}
+\vspace*{8cm}
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-116}{}{\label{exm:unnamed-chunk-116}
+}Calculez la longueur d'arc de \(r=ae^{-b\theta}\) avec
+\(\theta\in[0,\infty[\) et \(b>0\).
+\EndKnitrBlock{example}
+\vspace*{10cm}
+
+\BeginKnitrBlock{example}
+\protect\hypertarget{exm:unnamed-chunk-117}{}{\label{exm:unnamed-chunk-117}
+}Calculez la longueur d'arc de \(r=a(1-\sin(\theta))\) avec
+\(\theta\in[0,2\pi]\).
+\EndKnitrBlock{example}
+\vspace*{8cm}
 
 \hypertarget{geogebra-polaire}{%
 \section{GeoGebra}\label{geogebra-polaire}}
@@ -2051,6 +2085,111 @@ La longueur d'une courbe en coordonnées polaires définie par
 
 \hypertarget{fctvar}{%
 \chapter{Les fonctions de plusieurs variables}\label{fctvar}}
+
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
+
+Jusqu'à présent dans vos cours de calcul différentiel et intégral, nous
+n'avons étudié que les fonctions d'une seule variable, c'est-à-dire des
+fonctions de la forme \(y=f(x)\). Nous avons appris à dessiner ces
+fonctions, à les dériver, à les intégrer, etc. Par contre, il est utile
+d'étudier les fonctions de plus d'une variable car la plupart des
+phénomènes étudiés dépendent de plus d'un paramètre.
+
+Dans ce chapitre, nous reprendrons les différents thèmes étudiés sur les
+fonctions d'une seule variable, pour les généraliser sur les fonctions
+de plusieurs variables.
+
+\hypertarget{definitions}{%
+\section{Définitions}\label{definitions}}
+
+Débutons en rappelant le concept de fonction et en le généralisant aux
+fonctions de deux variables ou plus.
+
+\BeginKnitrBlock{definition}[Fonction]
+\protect\hypertarget{def:unnamed-chunk-118}{}{\label{def:unnamed-chunk-118}
+\iffalse (Fonction) \fi{} }Soit un ensemble \(A\) et un ensemble \(B\).
+Une fonction \(f\) est une application qui pour chaque élément
+\(x\in A\) lui associe un seul élément \(y\in B\). On note cette
+fonction \begin{align*}
+f:\ A&\longrightarrow  B\\
+x&\longrightarrow  y=f(x)
+\end{align*}
+
+\begin{itemize}
+\tightlist
+\item
+  L'ensemble \(A\) se nomme \textbf{domaine} de \(f\), noté
+  \(\text{dom}(f)\).
+\item
+  L'ensemble \(B\) est le \textbf{codomaine} de la fonction \(f\), noté
+  \(\text{codom}(f)\).
+\end{itemize}
+\EndKnitrBlock{definition}
+
+\BeginKnitrBlock{definition}[Image d'une fonction]
+\protect\hypertarget{def:unnamed-chunk-119}{}{\label{def:unnamed-chunk-119}
+\iffalse (Image d'une fonction) \fi{} }L'image d'une fonction est
+l'ensemble de tous les éléments du codomaine qui sont obtenus par la
+fonction \(f\). Nous notons l'image \(\text{ima}(f)\). En langage
+mathématique, l'image s'écrit comme suit: \begin{align*}
+\text{ima}(f):=\{y|y=f(x),\forall x\in dom(f)\}
+\end{align*} Il est à remarquer que
+\(\text{ima}(f)\subseteq \text{codom}(f)\).
+\EndKnitrBlock{definition}
+
+La distinction entre l'image et le codomaine est représentée à la figure
+\ref{fig:representationfonction}. Le codomaine est l'ensemble \(B\)
+tandis que l'image est l'ensemble de tous les éléments de \(B\) qui sont
+reliés à un ou plusieurs éléments de \(A\) par la fonction (ici l'image
+est la région ombragée).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{resources/images/latex/representationfonction} 
+
+}
+
+\caption{Graphique saggital représentant une fonction.}\label{fig:representationfonction}
+\end{figure}
+
+Jusqu'à maintenant, nous avons étudié les fonctions ayant comme domaine
+un sous-ensemble de la droite des réels. Dans ce cours, nous étudierons
+des fonctions ayant comme domaine un sous-ensemble \(\mathbb{R}^n\), où
+\(n\in\mathbb{N}\). En langage mathématique, ces fonctions s'écrivent:
+\begin{align*}
+f: D\subseteq \mathbb{R}^n &\longrightarrow \mathbb{R}\\
+(x_1,..,x_n)&\longrightarrow z=f(x_1,..,x_n)
+\end{align*} où \(x_1\), \ldots{}, \(x_n\) sont \(n\) variables
+indépendantes.
+
+\hypertarget{graphique}{%
+\section{Graphique}\label{graphique}}
+
+Lorsque nous avons une fonction \(y=f(x)\), son graphe correspond à une
+courbe dans le plan cartésien, c'est-à-dire dans \(\mathbb{R}^2\). Pour
+parvenir à dessiner cette courbe, on fait correspondre une valeur de
+\(y\) pour chaque valeur de \(x\).
+
+Lorsque nous somme en présence d'une fonction de deux variables
+\(z=f(x,y)\), le graphique de cette fonction est une surface dans
+l'espace de trois dimensions, \(\mathbb{R}^3\).
+
+Par contre, lorsque notre fonction possède plus de deux variables, il
+devient difficile, voire impossible de la représenter graphiquement. Il
+faudrait utiliser des espaces de plus de trois dimensions.
+
+\BeginKnitrBlock{remark}
+\iffalse{} {Remarque. } \fi{}Dans le cadre de ce cours, nous nous en
+tiendrons à des fonctions de une, deux ou trois variables.
+\EndKnitrBlock{remark}
+
+\includegraphics{calcul3_files/figure-latex/volcano-1.pdf}
+
+\includegraphics{calcul3_files/figure-latex/peaks-1.pdf}
+
+\hypertarget{domaine}{%
+\section{Domaine}\label{domaine}}
 
 \hypertarget{intfct}{%
 \chapter{L'intégration de fonctions de plusieurs
